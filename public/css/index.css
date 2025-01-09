@@ -1,0 +1,162 @@
+body {
+  background-size: 20px 20px;
+  /* background-image: radial-gradient( */
+  /*   circle, */
+  /*   #cccccc 1px, */
+  /*   rgba(204, 204, 204, 0) 1px */
+  /* ); */
+}
+
+h1 {
+  color: white;
+  font-size: 60pt;
+  font-family: "Helvetica";
+}
+
+b {
+  /* color: #dddddd; */
+  font-family: "Helvetica Bold";
+}
+
+#site-container {
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+
+  justify-content: center;
+  align-items: center;
+
+  z-index: 2;
+}
+
+#above-title {
+  /* background-color: black; */
+  flex-grow: 1;
+  width: 350px;
+  transform: translate(-250px, 0px);
+}
+
+#below-title {
+  /* background-color: #187697; */
+  flex-grow: 1;
+  width: 350px;
+  transform: translate(250px, 0px);
+}
+
+.title {
+  --top: 80px;
+  --bottom: 60px;
+  --left: 260px;
+  --right: 48px;
+
+  position: absolute;
+
+  top: calc(50vh - var(--top));
+  left: calc(50vw - var(--left));
+  height: calc(var(--top) + var(--bottom));
+  width: calc(var(--left) + var(--right));
+  clip-path: inset(0px 0px 0px 0px);
+
+  background-color: #000000;
+
+  z-index: 2;
+  border-radius: 20px 0px 0px 0px;
+
+  border-bottom: 5px solid #ff3000;
+}
+
+.first-name::after {
+  content: "@monoclonalAb";
+  font-size: 10px;
+
+  position: absolute;
+  height: 240%;
+  width: 105%;
+  bottom: -138%;
+  left: 0%;
+
+  border-top: 5px solid #ff3000;
+  border-right: 5px solid #ff3000;
+}
+
+.last-name::after {
+  content: "";
+  font-size: 10px;
+
+  position: absolute;
+  height: 20%;
+  left: -25%;
+  width: 150%;
+  bottom: -18%;
+
+  border-bottom: 5px solid #ff3000;
+}
+
+.inverse {
+  color: black;
+}
+
+.inverse > b {
+  color: black;
+}
+
+.title h1 > span {
+  color: #ff3000;
+}
+
+.title h2 {
+  text-align: right;
+
+  font-size: 12pt;
+  font-family: "Helvetica";
+}
+
+.first-name {
+  position: fixed;
+  top: 50vh;
+  left: 50vw;
+  transform: translate(calc(-50% + 90px), calc(-50% - 80px));
+}
+
+.last-name {
+  position: fixed;
+  top: 50vh;
+  left: 50vw;
+  transform: translate(calc(-50% - 10px), -50%);
+  /* transform: translate(125px, -20px); */
+  direction: rtl;
+}
+
+.github {
+  position: absolute;
+  bottom: 100%;
+
+  color: black;
+}
+
+.items {
+  position: relative;
+  top: 100px;
+}
+
+.items li {
+  display: inline;
+}
+.items li + li:before {
+  content: "  /  ";
+}
+.items li a {
+  color: black;
+  font-family: "Helvetica";
+  font-style: normal;
+  text-decoration: none;
+}
+.items li a:hover {
+  color: #374151;
+}
+
+::selection {
+  background-color: #f47142;
+}

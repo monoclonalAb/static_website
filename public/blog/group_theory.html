@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en-NZ">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>GROUP-ing my thoughts on GROUP theory</title>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="/css/normalize.css" type="text/css" />
+    <link rel="stylesheet" href="/css/about.css" type="text/css" />
+    <link rel="stylesheet" href="/css/navbar.css" type="text/css" />
+    <link rel="stylesheet" href="/css/main.css" type="text/css" />
+  </head>
+  <body>
+    <nav>  <div class='logo'>    <h1>      <a href='/index.html'> Eric Zheng<span>._</span> </a>    </h1>  </div>  <ul class='underline-animation'>    <li><a href='/about.html'>about</a></li>    <li><a href='/blog.html'>blog</a></li>    <li><a href='/contents.html'>contents</a></li>    <li><a href='/changelog.html'>changelog</a></li>  </ul>  <div class='socials underline-animation'>    <a      href='https://www.linkedin.com/in/eric-zheng-nz/'      rel='noreferrer'      target='_blank'    >      <img src='../img/linkedin.svg' alt='linkedin' />    </a>    <a href='https://github.com/monoclonalAb' rel='noreferrer' target='_blank'>      <img src='../img/github.svg' alt='github' />    </a>  </div></nav>
+    <div class="content">
+      <h1>
+        GROUP-ing my thoughts on GROUP theory <time>December 22, 2024</time>
+      </h1>
+      <h1 id="intro">intro:</h1>
+      <p>As 2025 begins (after what I perceive to be a not-so-good finals week) and people are out and about living it up outside (or inside, if that’s what you prefer), I decided it would be an <i>optimal</i> use of my time to understand the premise of Group Theory. More explicitly, I am just here to answer the question “what is Group Theory and why is it so useful?”, since, even after completing <a href="https://courseoutline.auckland.ac.nz/dco/course/MATHS/320/1245">Maths 320</a>, I still struggle to explain real-world applications of this topic and its importance in Mathematics.</p>
+      <p>This is a big, big problem as I am the (self-imposed) “#1” group-theory “fan” and to be able to retain such a title, I must at least have some fundamental understanding of what group-theory is before coming up with some legible argument as to why group-theory is the greatest of all time.</p>
+      <h2 id="so-what-is-group-theory">so what is group theory?</h2>
+      <p>A quick browse of any basic definition of ‘group theory’ will most likely net you two possible explanations:</p>
+      <div class="list">
+      <ul>
+      <li>the <a href="https://en.wikipedia.org/wiki/Group_theory">wikipedia</a> one stating that it is just the <b>study of groups</b> (super insightful really)</li>
+      <li>the slightly more-descriptive-yet-still-not-so-descriptive one stating that it is the <b>study of symmetry</b></li>
+      </ul>
+      </div>
+      <h3 id="wait-what-are-groups">wait, what are groups?</h3>
+      <p>Now, the definition of a group is a:</p>
+      <section id="group" class="important">
+      <h3>Group:</h3>
+      <p>A <b>non-empty</b> set of elements, <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>G</mi><annotation encoding="application/x-tex">G</annotation></semantics></math>, with an operation, <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mo>⋅</mo><annotation encoding="application/x-tex">\cdot</annotation></semantics></math>, that takes two elements of <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>G</mi><annotation encoding="application/x-tex">G</annotation></semantics></math> and combines them to produce another element of <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>G</mi><annotation encoding="application/x-tex">G</annotation></semantics></math>.</p>
+      <p><br/></p>
+      <p>The set of elements has to satisfy the axioms (established properties) below:</p>
+      <ol type="1">
+      <li><b>associativity</b> - for any <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>,</mo><mi>y</mi><mo>,</mo><mi>z</mi></mrow><annotation encoding="application/x-tex">x, y, z</annotation></semantics></math> in <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>G</mi><annotation encoding="application/x-tex">G</annotation></semantics></math>, we have <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo>⋅</mo><mi>y</mi><mo stretchy="false" form="postfix">)</mo><mo>⋅</mo><mi>z</mi><mo>=</mo><mi>x</mi><mo>⋅</mo><mo stretchy="false" form="prefix">(</mo><mi>y</mi><mo>⋅</mo><mi>z</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(x \cdot y) \cdot z = x \cdot (y \cdot z)</annotation></semantics></math></li>
+      <li><b>identity</b> - there exists an <b>identity element</b>, <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>e</mi><annotation encoding="application/x-tex">e</annotation></semantics></math>, such that <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>e</mi><mo>*</mo><mi>x</mi><mo>=</mo><mi>x</mi></mrow><annotation encoding="application/x-tex">e * x = x</annotation></semantics></math></li>
+      <li><b>inverse</b> - for any element in the set, <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>a</mi><annotation encoding="application/x-tex">a</annotation></semantics></math>, there will always exist an <b>inverse element</b>, commonly denoted <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>a</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><annotation encoding="application/x-tex">a^{-1}</annotation></semantics></math>, such that <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mo>×</mo><msup><mi>a</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><mo>=</mo><mi>e</mi></mrow><annotation encoding="application/x-tex">a \times a^{-1} = e</annotation></semantics></math></li>
+      </ol>
+      </section>
+      <p>At first glance, this definition does not provide much intuition for what its use cases are, nor does anything mention anything about symmetries in particular.</p>
+      <h3 id="hmm-what-about-symmetries-then">hmm, what about symmetries then?</h3>
+      <p>In fact, the symmetry we talk about is slightly different from the geometrical definition that most people have been exposed to, as it is generally defined as:</p>
+      <section id="symmetry" class="important">
+      <h3>Symmetry<span>:</span></h3>
+      <p>a collection of all the operations that preserves an object’s <b>underlying structure</b> (basically, leaving the object unchanged).</p>
+      </section>
+      <p>Note, that we generally consider each of these symmetrical operations as a <b>permutation</b>.</p>
+      <p>Using geometrical symmetry as an example, rotations and reflections are <b>permutations</b> as a <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>90</mn><annotation encoding="application/x-tex">90</annotation></semantics></math>, <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>180</mn><annotation encoding="application/x-tex">180</annotation></semantics></math>, or <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>270</mn><annotation encoding="application/x-tex">270</annotation></semantics></math> degree rotation or a reflection across either of the diagonals of a square will leave it looking the same as before.</p>
+      <h3 id="huh-what-is-the-relationship-between-groups-and-symmetry-then">huh, what is the relationship between groups and symmetry then?</h3>
+      <p>To put it simply, Groups are just an <b>abstraction</b> of symmetry.</p>
+      <h4 id="and-what-does-that-mean-exactly">and, what does that mean exactly?</h4>
+      <p>The definition of “abstraction” that <a href="https://en.wikipedia.org/wiki/Abstraction_(mathematics)">Wikipedia</a> supplies is that:</p>
+      <section id="abstraction" class="important">
+      <h3>Abstraction</h3>
+      <p>process of extracting the underlying structures, patterns or properties of a mathematical concept, removing any dependence on real world objects with which it might originally have been connected, and generalizing it so that it has wider applications</p>
+      </section>
+      <p>Whilst you could read this definition and make the argument that mathematics itself is an abstraction, an example of an abstraction that we use on a daily basis would just be numbers.</p>
+      <p>Take the number 4 for example; when we have 4 apples, 4 houses or 4 successful mathematicians, we see that the number itself is not attached to any physical object in particular, but is just there to represent the quantity of objects present.</p>
+      <p>In essence, numbers <b>abstract</b> away from the specific nature of each objects involved and provide us with a universal framework to manipulate quantities.</p>
+      <p>In fact, if you take a step back and revisit the definition of a group, you can view it as a way of formalizing the <b>essential rules</b> of symmetry:</p>
+      <section id="group-1" class="important">
+      <h3>Group:</h3>
+      <p>A non-empty set of elements, <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>G</mi><annotation encoding="application/x-tex">G</annotation></semantics></math>, with an operation that takes two elements of <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>G</mi><annotation encoding="application/x-tex">G</annotation></semantics></math> and combines them to produce another element of <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>G</mi><annotation encoding="application/x-tex">G</annotation></semantics></math>. (<b>closure</b>)</p>
+      <div class="note">
+      <ul>
+      <li>a symmetry of an object combined with another symmetry will <b>always</b> result in another symmetry</li>
+      </ul>
+      </div>
+      <p><br/></p>
+      <p>The set of elements has to satisfy the axioms (established properties) below:</p>
+      <ol type="1">
+      <li><b>associativity</b> - for any <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>,</mo><mi>y</mi><mo>,</mo><mi>z</mi></mrow><annotation encoding="application/x-tex">x, y, z</annotation></semantics></math> in <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>G</mi><annotation encoding="application/x-tex">G</annotation></semantics></math>, we have <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo>*</mo><mi>y</mi><mo stretchy="false" form="postfix">)</mo><mo>*</mo><mi>z</mi><mo>=</mo><mi>x</mi><mo>*</mo><mo stretchy="false" form="prefix">(</mo><mi>y</mi><mo>*</mo><mi>z</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(x * y) * z=x * (y * z)</annotation></semantics></math></li>
+      </ol>
+      <div class="note">
+      <ul>
+      <li>symmetries are associative as it does not matter how we group them; as long as the order of the operations is preserved, the end result will remain identical {.note}</li>
+      </ul>
+      </div>
+      <ol start="2" type="1">
+      <li><b>identity</b> - there exists an identity element, <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>e</mi><annotation encoding="application/x-tex">e</annotation></semantics></math>, such that <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>e</mi><mo>×</mo><mi>x</mi><mo>=</mo><mi>x</mi></mrow><annotation encoding="application/x-tex">e \times x = x</annotation></semantics></math></li>
+      </ol>
+      <div class="note">
+      <ul>
+      <li>the identity element (keeping the object fixed) is always a symmetry</li>
+      </ul>
+      </div>
+      <ol start="3" type="1">
+      <li><b>inverse</b> - for any element in the set, <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>a</mi><annotation encoding="application/x-tex">a</annotation></semantics></math>, there will always exist an inverse element, commonly denoted <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>a</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><annotation encoding="application/x-tex">a^{-1}</annotation></semantics></math>, such that <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mo>×</mo><msup><mi>a</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><mo>=</mo><mi>e</mi></mrow><annotation encoding="application/x-tex">a \times a^{-1} = e</annotation></semantics></math></li>
+      </ol>
+      <div class="note">
+      <ul>
+      <li>any symmetry should be reversable by just “undoing” the symmetry</li>
+      </ul>
+      </div>
+      </section>
+      <p>Thus, by providing such a general definition for groups, this gives us a way to</p>
+      <p>In other words, since groups aim to <b>abstract</b> away from the particularities of all the objects involved, you can view the definition of a group as an attempt to formalize the essential rules of symmetry:</p>
+      <h3 id="wait-why-do-we-want-to-abstract-symmetry-in-the-first-place">wait, why do we want to abstract symmetry in the first place?</h3>
+      <p>The occurence of symmetry is suprisingly common, from the shape of snowflakes, to architectural design and more<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>. The beauty of abstraction is that once you generate an abstract definition for a concept, any time these properties are satisfied, you can apply the same reasoning, tools, and theorems across a wide variety of situations.</p>
+      <h4 id="important-disclaimer">Important disclaimer:</h4>
+      <p>Even though this was the perfect segway for me to start rattling through a lot of Group Theory’s significant use-cases in science, after trying to disect and summarise Galois Theory in a digestable manner for non-mathematicians, I realised that I would not be doing any of these topic’s justice if I were to try and summarise whole undergraduate courses in singular paragraphs.</p>
+      <p>From Galois Theory in Algebra to the Lorentz group in Physics, all of these topics definitely each deserve at least their own blog post (or multiple) which is half the reason why I decided to leave out some more monumental discoveries that were made using group theory, and decided to explore some niche applications of group theory.</p>
+      <p>(which I would be able to list after scrolling through all 10 subsections present in the <a href="https://en.wikipedia.org/wiki/Group_theory#Applications_of_group_theory">Group Theory</a> page of wikipedia for “inspiration”).</p>
+      <h4 id="take-the-rubiks-cube-for-example">Take the <b>Rubik’s Cube</b> for example:</h4>
+      <p>When you shuffle the cube from it’s “solved” position, the result is one of the many permutations of the cube that it could take. To reach such a permutation, there will always exist a set of moves of the cube that you can take to reach such a position. In order to solve the cube, you can simply reverse the set of moves you took to shuffle it in the first place (proving the existence of an inverse). Clearly, the identity element is just its solved state (proving identity), concatenating any permutation (or move sequence) together with another just results in another valid permutation (proving closure) and as long as the order of the move sequence remains constant, the ending permutation will remain the same as well (proving associativity).</p>
+      <p>As a result, there exists a <a href="https://en.wikipedia.org/wiki/Rubik%27s_Cube_group">Rubik’s Cube Group</a> where each element of the Group is a unique permutation of the cube.</p>
+      <p>Knowledge of the Rubik’s Cube Group, especially for finding the God’s Number, as Morwen Thistlewaite was credited for mathematically devising a method for solving any 3x3 in a maximum of 52 moves using <a href="https://www.jaapsch.net/puzzles/thistle.htm">groups</a>.</p>
+      <p>In 1981, this was quite an important theoretical break-through as it intends on slowly reducing the cube to subgroups (subsets of the original groups, that satisfies all the conditions of a group) of the original Rubik’s Cube group that only contains permutations which can be solved without, for example, using quarter turns of the upper and bottom face. With the further optimisation of the Thistlewaite Algorithm, and improvement to computing technology, several researchers were able to eventually deduce that <a href="https://cube20.org/">God’s Number is 20</a>.</p>
+      <h4 id="or-the-fifteen-puzzle">or the Fifteen Puzzle:</h4>
+      <p>A much simpler example to consider would be the fifteen puzzle.</p>
+      <figure>
+      <img src="./001_group_theory/15_puzzle_solved.png" class="medium_img" alt="" /><figcaption>Original photo from <a href="https://michael.kim/blog/puzzle">here</a></figcaption>
+      </figure>
+      <p>For those unaware, the fifteen puzzle is a 4x4 sliding puzzle containing tiles ordered from 1 to 15, where the goal is to order the tiles into numberical order. Whilst it is definitely possible to trivialise the puzzle by splitting the puzzle into sub-problems, how would you determine if any provided configuration of the fifteen puzzle is solvable or not? We will start by attempting a simpler problem to this posed by <a href="https://en.wikipedia.org/wiki/Sam_Loyd">Sam Loyd</a>, where he posed a wager for $1000 to anyone that could provide a solution to the fifteen puzzle with the position of 14 and 15 interchanged.</p>
+      <p>Similar to the Rubik’s Cube, we can follow similar steps to show that all possible configurations of the fifteen puzzle can be arranged into a group (identity, inverse, associtivity, closure).</p>
+      <p>However, the one caveat to this approach is that not all movesets can be composed one after each other; if you want to compose move B after move A, that is only possible if move A leaves the puzzle where the empty slot is in a legal position for move B to be applied (forming a <a href="https://en.wikipedia.org/wiki/Groupoid#Puzzles">Groupoid</a>, instead of a Group).</p>
+      <p>Hence, if we restrict all possible configurations to always leave the empty slot in the bottom right corner, we will find that each permutation follows the ruleset of a group structure. In fact, by using properties derived from a well-studied group, we can show that, with the position of 14 and 15 interchanged, the fifteen puzzle is unsolveable.</p>
+      <figure>
+      <img src="./001_group_theory/15_puzzle_shuffled.png" class="medium_img" alt="" /><figcaption>Original photo from <a href="https://michael.kim/blog/puzzle">here</a></figcaption>
+      </figure>
+      <p>In fact, we can define each permutation using a “two-line notation” with the top line defining the original “slot” and the second line to define the tile that is currently occupying the slot. Using the above example, we get:</p>
+      <div class="table">
+      <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">(</mo><mtable><mtr><mtd columnalign="center"><mn>1</mn></mtd><mtd columnalign="center"><mn>2</mn></mtd><mtd columnalign="center"><mn>3</mn></mtd><mtd columnalign="center"><mn>4</mn></mtd><mtd columnalign="center"><mn>5</mn></mtd><mtd columnalign="center"><mn>6</mn></mtd><mtd columnalign="center"><mn>7</mn></mtd><mtd columnalign="center"><mn>8</mn></mtd><mtd columnalign="center"><mn>9</mn></mtd><mtd columnalign="center"><mn>10</mn></mtd><mtd columnalign="center"><mn>11</mn></mtd><mtd columnalign="center"><mn>12</mn></mtd><mtd columnalign="center"><mn>13</mn></mtd><mtd columnalign="center"><mn>14</mn></mtd><mtd columnalign="center"><mn>15</mn></mtd></mtr><mtr><mtd columnalign="center"><mn>15</mn></mtd><mtd columnalign="center"><mn>14</mn></mtd><mtd columnalign="center"><mn>8</mn></mtd><mtd columnalign="center"><mn>12</mn></mtd><mtd columnalign="center"><mn>10</mn></mtd><mtd columnalign="center"><mn>11</mn></mtd><mtd columnalign="center"><mn>9</mn></mtd><mtd columnalign="center"><mn>13</mn></mtd><mtd columnalign="center"><mn>2</mn></mtd><mtd columnalign="center"><mn>6</mn></mtd><mtd columnalign="center"><mn>5</mn></mtd><mtd columnalign="center"><mn>1</mn></mtd><mtd columnalign="center"><mn>3</mn></mtd><mtd columnalign="center"><mn>7</mn></mtd><mtd columnalign="center"><mn>4</mn></mtd></mtr></mtable><mo stretchy="true" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\left(\begin{smallmatrix}
+        1 &amp; 2 &amp; 3 &amp; 4 &amp; 5 &amp; 6 &amp; 7 &amp; 8 &amp; 9 &amp; 10 &amp; 11 &amp; 12 &amp; 13 &amp; 14 &amp; 15 \\
+        15 &amp; 14 &amp; 8 &amp; 12 &amp; 10 &amp; 11 &amp; 9 &amp; 13 &amp; 2 &amp; 6 &amp; 5 &amp; 1 &amp; 3 &amp; 7 &amp; 4
+      \end{smallmatrix}\right)</annotation></semantics></math></p>
+      </div>
+      <p>However, every cycle can also be represented in cycle form.</p>
+      <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>,</mo><mn>15</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>12</mn><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="prefix">(</mo><mn>2</mn><mo>,</mo><mn>14</mn><mo>,</mo><mn>7</mn><mo>,</mo><mn>9</mn><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="prefix">(</mo><mn>3</mn><mo>,</mo><mn>8</mn><mo>,</mo><mn>13</mn><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="prefix">(</mo><mn>5</mn><mo>,</mo><mn>10</mn><mo>,</mo><mn>6</mn><mo>,</mo><mn>11</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">
+      (1, 15, 4, 12)(2, 14, 7, 9)(3, 8, 13)(5, 10, 6, 11)
+      </annotation></semantics></math></p>
+      <p>By seeing that slot 1 has tile 15, slot 15 has tile 4, slot 4 has tile 12, and so on, it allows us to more compactly represent the permutation in terms of disjoint cycles.</p>
+      <p>Note, that any cycle containing a point that is mapped to itself can just be omitted (e.g. <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>3</mn><mo>,</mo><mn>4</mn><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="prefix">(</mo><mn>5</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(1, 2, 3, 4)(5)</annotation></semantics></math> is the same as <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>3</mn><mo>,</mo><mn>4</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(1, 2, 3, 4)</annotation></semantics></math>).</p>
+      <p>The intuition for reading cycles is that you read from right to left. For example, if we were to take the number 15, you check each cycle from right to left until you reach one with <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>15</mn><annotation encoding="application/x-tex">15</annotation></semantics></math> inside of it; once you do reach one, <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>,</mo><mn>15</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>12</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(1, 15, 4, 12)</annotation></semantics></math>, then the cycle sends <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>15</mn><annotation encoding="application/x-tex">15</annotation></semantics></math> to <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>4</mn><annotation encoding="application/x-tex">4</annotation></semantics></math>. You now repeat these steps for the remaining cycles with the number <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>4</mn><annotation encoding="application/x-tex">4</annotation></semantics></math> until you reach the end. Thus, giving us the result that the permutation sends <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>15</mn><annotation encoding="application/x-tex">15</annotation></semantics></math> to <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>4</mn><annotation encoding="application/x-tex">4</annotation></semantics></math>.</p>
+      <p>We can check this with every number from <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>1</mn><annotation encoding="application/x-tex">1</annotation></semantics></math> to <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>15</mn><annotation encoding="application/x-tex">15</annotation></semantics></math> and will see that it matches every value in the “two-line” notation.</p>
+      <p>These cycles can then be further reduced to <b>transpositions</b> (or cycles of length 2). For example, <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>3</mn><mo>,</mo><mn>4</mn><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>,</mo><mn>4</mn><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>,</mo><mn>3</mn><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">
+      (1, 2, 3, 4) = (1, 4)(1, 3)(1, 2)
+      </annotation></semantics></math></p>
+      <p>You can do a similar example to before to prove for equality: e.g. for <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>2</mn><annotation encoding="application/x-tex">2</annotation></semantics></math>, the cycle <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(1, 2)</annotation></semantics></math> sends <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>2</mn><annotation encoding="application/x-tex">2</annotation></semantics></math> to <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>1</mn><annotation encoding="application/x-tex">1</annotation></semantics></math>, and the cycle <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>,</mo><mn>3</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(1, 3)</annotation></semantics></math> sends <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>1</mn><annotation encoding="application/x-tex">1</annotation></semantics></math> to <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>3</mn><annotation encoding="application/x-tex">3</annotation></semantics></math>, meaning the RHS permutation sends <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>2</mn><annotation encoding="application/x-tex">2</annotation></semantics></math> to <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>3</mn><annotation encoding="application/x-tex">3</annotation></semantics></math>.</p>
+      <p>Therefore, by reducing the original cycle notation, we can rewrite it in terms of 13 transpositions:</p>
+      <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mtable><mtr><mtd columnalign="right"></mtd><mtd columnalign="left"><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>,</mo><mn>15</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>12</mn><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="prefix">(</mo><mn>2</mn><mo>,</mo><mn>14</mn><mo>,</mo><mn>7</mn><mo>,</mo><mn>9</mn><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="prefix">(</mo><mn>3</mn><mo>,</mo><mn>8</mn><mo>,</mo><mn>13</mn><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="prefix">(</mo><mn>5</mn><mo>,</mo><mn>10</mn><mo>,</mo><mn>6</mn><mo>,</mo><mn>11</mn><mo stretchy="false" form="postfix">)</mo></mtd></mtr><mtr><mtd columnalign="right"></mtd><mtd columnalign="left"><mo>=</mo><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>,</mo><mn>12</mn><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>,</mo><mn>4</mn><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>,</mo><mn>15</mn><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="prefix">(</mo><mn>2</mn><mo>,</mo><mn>9</mn><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="prefix">(</mo><mn>2</mn><mo>,</mo><mn>7</mn><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="prefix">(</mo><mn>2</mn><mo>,</mo><mn>14</mn><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="prefix">(</mo><mn>3</mn><mo>,</mo><mn>13</mn><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="prefix">(</mo><mn>3</mn><mo>,</mo><mn>8</mn><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="prefix">(</mo><mn>5</mn><mo>,</mo><mn>11</mn><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="prefix">(</mo><mn>5</mn><mo>,</mo><mn>6</mn><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="prefix">(</mo><mn>5</mn><mo>,</mo><mn>10</mn><mo stretchy="false" form="postfix">)</mo></mtd></mtr></mtable><annotation encoding="application/x-tex">
+      \begin{align}
+      &amp;(1, 15, 4, 12)(2, 14, 7, 9)(3, 8, 13)(5, 10, 6, 11) \\
+      &amp;= (1, 12)(1, 4)(1, 15)(2, 9)(2, 7)(2, 14)(3, 13)(3, 8)(5, 11)(5, 6)(5, 10)
+      \end{align}
+      </annotation></semantics></math></p>
+      <p>In fact, it has been proven that each permutation correlates to a well-known group, <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>A</mi><mn>15</mn></msub><annotation encoding="application/x-tex">A_{15}</annotation></semantics></math> (or the <a href="https://en.wikipedia.org/wiki/Alternating_group">alternating group</a> of degree 15).</p>
+      <h2 id="in-summary">In summary:</h2>
+      <div class="list">
+      <ul>
+      <li>Groups Theory aims to abstract the conecpt of symmetry, providing a framework to study and compare symmetric properties without dealing with objects physical properties</li>
+      <li>Symmetry is a transformation that aims to preserve an object’s structure, and is pervasive across many fields in science</li>
+      <li>Applications of Group Theory can uncover patterns everywhere (Rubik’s Cube, 15 Puzzle etc.)</li>
+      <li>Blogging is hard</li>
+      </ul>
+      </div>
+      <section class="footnotes" role="doc-endnotes">
+      <hr />
+      <ol>
+      <li id="fn1" role="doc-endnote"><p>In fact, the reason that mathematicians have thought of devising a formal definition for groups in the first place goes to show how useful they are<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+      </ol>
+      </section>
+    </div>
+  </body>
+</html>
