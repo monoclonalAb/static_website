@@ -1,6 +1,6 @@
 ---
 title: GROUP-ing my thoughts on GROUP theory
-date: 2024-12-22
+date: 2025-01-09
 ---
 
 # intro:
