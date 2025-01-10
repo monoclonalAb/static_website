@@ -29,7 +29,9 @@ jobs:
         uses: actions/checkout@v4
       - name: List root directory
         run: |
-          ls ${{ github.workspace }}
+          ls -la ${{ github.workspace }}
+      - name: Give execution permissions
+        run: chmod +x src/blog/build.sh
       - name: Build static files
         run: |
           bash ${{ github.workspace }}/build.sh
