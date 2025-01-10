@@ -27,6 +27,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: List root directory
+        working-directory: ${{ github.workspace }}
         run: ls -la
       - name: Build static files
         id: build
