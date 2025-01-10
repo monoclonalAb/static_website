@@ -1,5 +1,6 @@
 body {
   overflow: none;
+  position: relative;
 }
 
 h1 {
@@ -59,7 +60,7 @@ b {
   z-index: 2;
   border-radius: 20px 0px 0px 0px;
 
-  border-bottom: 5px solid #ff3000;
+  /* border-bottom: 5px solid #ff3000; */
 }
 
 .first-name::after {
@@ -83,7 +84,7 @@ b {
   position: absolute;
   height: 20%;
   left: -25%;
-  width: 150%;
+  width: 120%;
   bottom: -18%;
 
   border-bottom: 5px solid #ff3000;

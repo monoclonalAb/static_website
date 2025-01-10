@@ -22,7 +22,7 @@ coming up with some legible argument as to why group-theory is the greatest of a
 
 A quick browse of any basic definition of 'group theory' will most likely net you two possible explanations:
 
-::: list
+::: li/t
 - the [wikipedia](https://en.wikipedia.org/wiki/Group_theory) one stating that it is just the <b>study of groups</b> (super insightful really)
 - the slightly more-descriptive-yet-still-not-so-descriptive one stating that it is the <b>study of symmetry</b>
 :::
@@ -57,10 +57,8 @@ as it is generally defined as:
 a collection of all the operations that preserves an object's <b>underlying structure</b> (basically, leaving the object unchanged).
 :::
 
-Note, that we generally consider each of these symmetrical operations as a <b>permutation</b>.
-
 Using geometrical symmetry as an example,
-rotations and reflections are <b>permutations</b> as a $90$, $180$, or $270$ degree rotation
+rotations and reflections are <b>symmetry operations</b> as a $90$, $180$, or $270$ degree rotation
 or a reflection across either of the diagonals of a square will leave it looking the same as before.
 
 ### huh, what is the relationship between groups and symmetry then?
@@ -94,7 +92,7 @@ In fact, if you take a step back and revisit the definition of a group, you can 
 ::: important
 ### Group:
 
-A non-empty set of elements, $G$, with an operation that takes two elements of $G$ and combines them to produce another element of $G$. (<b>closure</b>)
+A <b>non-empty</b> set of elements, $G$, with an operation, $\cdot$, that takes two elements of $G$ and combines them to produce another element of $G$.
 
 ::: note
 - a symmetry of an object combined with another symmetry will <b>always</b> result in another symmetry 
@@ -104,19 +102,19 @@ A non-empty set of elements, $G$, with an operation that takes two elements of $
 
 The set of elements has to satisfy the axioms (established properties) below:
 
-1. <b>associativity</b> - for any $x, y, z$ in $G$, we have $(x * y) * z=x * (y * z)$
+1. <b>associativity</b> - for any $x, y, z$ in $G$, we have $(x \cdot y) \cdot z = x \cdot (y \cdot z)$
 
 ::: note
 - symmetries are associative as it does not matter how we group them; as long as the order of the operations is preserved, the end result will remain identical {.note}
 :::
 
-2. <b>identity</b> - there exists an identity element, $e$, such that $e \times x = x$
+2. <b>identity</b> - there exists an <b>identity element</b>, $e$, such that $e \cdot x = x$
 
 ::: note
 - the identity element (keeping the object fixed) is always a symmetry
 ::: 
 
-3. <b>inverse</b> - for any element in the set, $a$, there will always exist an inverse element, commonly denoted $a^{-1}$, such that $a \times a^{-1} = e$ 
+3. <b>inverse</b> - for any element in the set, $a$, there will always exist an inverse element, commonly denoted $a^{-1}$, such that $a \cdot a^{-1} = e$ 
 
 ::: note
 - any symmetry should be reversable by just "undoing" the symmetry
@@ -131,7 +129,7 @@ you can view the definition of a group as an attempt to formalize the essential 
 ### wait, why do we want to abstract symmetry in the first place?
 
 The occurence of symmetry is suprisingly common, from the shape of snowflakes,
-to architectural design and more[^1].
+to architectural design and more.[^1]
 The beauty of abstraction is that once you generate an abstract definition for a concept,
 any time these properties are satisfied, you can apply the same reasoning, tools, and theorems across a wide variety of situations.
 
@@ -144,27 +142,25 @@ and summarise whole undergraduate courses in singular paragraphs.
 
 From Galois Theory in Algebra to the Lorentz group in Physics, all of these topics definitely each deserve at least their own blog post (or multiple)
 which is half the reason why I decided to leave out some more monumental discoveries that were made using group theory,
-and decided to explore some niche applications of group theory.
-
-(which I would be able to list after scrolling through all 10 subsections present in the [Group Theory](https://en.wikipedia.org/wiki/Group_theory#Applications_of_group_theory)
-page of wikipedia for "inspiration").
+and decided to explore some niche applications of group theory.[^2]
 
 #### Take the <b>Rubik's Cube</b> for example:
 
-When you shuffle the cube from it's "solved" position, the result is one of the many permutations of the cube that it could take.
-To reach such a permutation, there will always exist a set of moves of the cube that you can take to reach such a position.
+When you shuffle the cube from it's "solved" position, the result is one of the many shuffled positions of the cube that it could take.
+To reach such a position, there will always exist a set of moves of the cube that you can take to reach it.
 In order to solve the cube, you can simply reverse the set of moves you took to shuffle it in the first place (proving the existence of an inverse).
 Clearly, the identity element is just its solved state (proving identity),
-concatenating any permutation (or move sequence) together with another just results in another valid permutation (proving closure)
-and as long as the order of the move sequence remains constant, the ending permutation will remain the same as well (proving associativity).
+concatenating any position (or move sequence) together with another just results in another valid position (proving closure)
+and as long as the order of the move sequence remains constant, the ending position will remain the same as well (proving associativity).
 
-As a result, there exists a [Rubik's Cube Group](https://en.wikipedia.org/wiki/Rubik%27s_Cube_group) where each element of the Group is a unique permutation of the cube.
+As a result, there exists a [Rubik's Cube Group](https://en.wikipedia.org/wiki/Rubik%27s_Cube_group) where each element of the Group is a unique position of the cube.
 
 Knowledge of the Rubik's Cube Group, especially for finding the God's Number, 
 as Morwen Thistlewaite was credited for mathematically devising a method for solving any 3x3 in a maximum of 52 moves using [groups](https://www.jaapsch.net/puzzles/thistle.htm).
 
 In 1981, this was quite an important theoretical break-through as it intends on slowly 
-reducing the cube to subgroups (subsets of the original groups, that satisfies all the conditions of a group) of the original Rubik's Cube group that only contains permutations which can be solved without, for example, using quarter turns of the upper and bottom face.
+reducing the cube to subgroups (subsets of the original groups, that satisfies all the conditions of a group) 
+of the original Rubik's Cube group that only contains positions which can be solved without, for example, using quarter turns of the upper and bottom face.
 With the further optimisation of the Thistlewaite Algorithm, and improvement to computing technology, several researchers were able to eventually deduce that [God's Number is 20](https://cube20.org/).
 
 #### or the Fifteen Puzzle:
@@ -187,10 +183,19 @@ However, the one caveat to this approach is that not all movesets can be compose
 if you want to compose move B after move A, that is only possible if move A leaves the puzzle where the empty slot is in a legal position for move B to be applied
 (forming a [Groupoid](https://en.wikipedia.org/wiki/Groupoid#Puzzles), instead of a Group).
 
-Hence, if we restrict all possible configurations to always leave the empty slot in the bottom right corner, 
-we will find that each permutation follows the ruleset of a group structure. 
+Hence, if we restrict all possible movesets to always leave the empty slot in the bottom right corner, 
+we will find that each position follows the ruleset of a group structure. 
 In fact, by using properties derived from a well-studied group, 
-we can show that, with the position of 14 and 15 interchanged, the fifteen puzzle is unsolveable.
+we can show that, with the position of 14 and 15 interchanged, 
+the **fifteen puzzle** is unsolveable.
+
+We will start off by defining a **permutation** of a set, $S$, as a one-to-one mapping from $S$ to itself.
+Using the position below as an example, we can describe the permutation using the function $\sigma$ such that:
+$$
+\begin{equation*}
+\sigma(1) = 15, \hspace{1em} \sigma(2) = 14, \hspace{1em} \sigma(3) = 8, \hspace{1em} \sigma(4) = 12 \hspace{1em} etc.
+\end{equation*}
+$$
 
 ![Original photo from [here](https://michael.kim/blog/puzzle)](./001_group_theory/15_puzzle_shuffled.png){.medium_img}
 
@@ -204,24 +209,24 @@ $$\left(\begin{smallmatrix}
 \end{smallmatrix}\right)$$ 
 :::
 
-However, every cycle can also be represented in cycle form.
+However, every permutation can also be represented in cycle form.
 
 $$
 (1, 15, 4, 12)(2, 14, 7, 9)(3, 8, 13)(5, 10, 6, 11)
 $$
 
-By seeing that slot 1 has tile 15, slot 15 has tile 4, slot 4 has tile 12, and so on,
-it allows us to more compactly represent the permutation in terms of disjoint cycles.
+Seeing that slot 1 has tile 15, slot 15 has tile 4, slot 4 has tile 12, and so on,
+we can more compactly represent the permutation in terms of disjoint cycles.
 
 Note, that any cycle containing a point that is mapped to itself can just be omitted
 (e.g. $(1, 2, 3, 4)(5)$ is the same as $(1, 2, 3, 4)$).
 
-The intuition for reading cycles is that you read from right to left. For example, if we were to take the number 15, you check each cycle from right to left until you reach one with $15$ inside of it;
+The intuition for reading permutations in cyclic form is that you read from right to left. 
+For example, if we were to take the number 15, you check each cycle from right to left until you reach one with $15$ inside of it;
 once you do reach one, $(1, 15, 4, 12)$, then the cycle sends $15$ to $4$.
 You now repeat these steps for the remaining cycles with the number $4$ until you reach the end.
-Thus, giving us the result that the permutation sends $15$ to $4$.
-
-We can check this with every number from $1$ to $15$ and will see that it matches every value in the "two-line" notation.
+Thus, giving us the result that the permutation sends $15$ to $4$
+(you can check this with every number from $1$ to $15$ and will see that it matches every value in the "two-line" notation).
 
 These cycles can then be further reduced to <b>transpositions</b> (or cycles of length 2).
 For example,
@@ -230,20 +235,50 @@ $$
 $$
 
 You can do a similar example to before to prove for equality:
-e.g. for $2$, the cycle $(1, 2)$ sends $2$ to $1$, and the cycle $(1, 3)$ sends $1$ to $3$, meaning the RHS permutation sends $2$ to $3$.
+e.g. for $2$, the cycle $(1, 2)$ sends $2$ to $1$, then the cycle $(1, 3)$ sends $1$ to $3$, meaning the RHS permutation sends $2$ to $3$.
 
 Therefore, by reducing the original cycle notation, we can rewrite it in terms of 13 transpositions:
 
 $$
-\begin{align}
+\begin{align*}
 &(1, 15, 4, 12)(2, 14, 7, 9)(3, 8, 13)(5, 10, 6, 11) \\
 &= (1, 12)(1, 4)(1, 15)(2, 9)(2, 7)(2, 14)(3, 13)(3, 8)(5, 11)(5, 6)(5, 10)
-\end{align}
+\end{align*}
 $$
 
+Similar to the fact that integers have parity (odd/even), permutations also have parity:
+
+:::list
+- odd permutations can be rewritten as a product of an **odd** number of transpositions
+- even permutations can be rewritten as a product of an **even** number of transpositions
+:::
+
+Note that like how an integer can not be simultaneously even and odd,
+permutations can also not be simultaneously even and odd 
+(meaning if you can write a permutation in terms of a product of an **odd** number of transpositions, you can **only** write it as a product of **odd** number of transpositions).
+
+Then, since the permutation $(14, 15)$ is clearly odd, if we can prove that the all possible permutations of the fifteen puzzle are even, 
+we can prove that it is impossible to win $1000 from Sam Loyd.
+
+This turns out to be quite intuitive if you just pay attention to how the empty slot moves when you shuffle the puzzle.
+Since the empty slot will always have to return back to the bottom right position,
+you realise that for any up movement, there will be a corresponding down movement,
+and for any left movement, there will be a corresponding right movement.
+Since every move is paired and we can represent each move by a transposition (since we are only swapping the tiles on 2 slots),
+it means that no matter what permutation the puzzle ends up in, 
+we know that it must be able to be written in terms of an **even** number of transpositions.
+
+Thus, this informally proves that the permutation $(14, 15)$ is impossible to achieve.
+
+**Why do we need to know all this?** 
+One of the most fundamental groups, the finite symmetric group, $S_n$, 
+is used to represent all the possible permutations possibly performed on $n$ elements.
+Intuitively, that implies all the possible permutations of the fifteen puzzle is a subgroup of the finite symmetric group.
 
 In fact, it has been proven that each permutation correlates to a well-known group, $A_{15}$
-(or the [alternating group](https://en.wikipedia.org/wiki/Alternating_group) of degree 15).
+(or the [alternating group](https://en.wikipedia.org/wiki/Alternating_group) of degree 15),
+which is a finite set that consists of all the even permutations in the corresponding finite symmetric group.
+You can read more about this topic [here](https://web.archive.org/web/20210107214840/https://faculty.etsu.edu/beelerr/fifteen-supp.pdf).
 
 
 ## In summary:
@@ -255,4 +290,6 @@ In fact, it has been proven that each permutation correlates to a well-known gro
 - Blogging is hard
 :::
 
-[^1]: In fact, the reason that mathematicians have thought of devising a formal definition for groups in the first place goes to show how useful they are
+[^1]: In fact, the reason that mathematicians have thought of devising a formal definition for groups in the first place goes to show how useful they are. 
+
+[^2]: The other reason might just be due to time limitations... whole undergraduate courses take me a long time to digest...

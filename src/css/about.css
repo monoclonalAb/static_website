@@ -102,6 +102,17 @@ ol {
   padding-left: 25px;
 }
 
+.footnotes {
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+}
+
+.footnotes > ol > li {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
 /** mathml styling **/
 
 msub *,
