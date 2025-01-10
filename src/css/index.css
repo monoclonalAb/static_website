@@ -1,10 +1,5 @@
 body {
-  background-size: 20px 20px;
-  /* background-image: radial-gradient( */
-  /*   circle, */
-  /*   #cccccc 1px, */
-  /*   rgba(204, 204, 204, 0) 1px */
-  /* ); */
+  overflow: none;
 }
 
 h1 {
