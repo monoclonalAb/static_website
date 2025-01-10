@@ -27,10 +27,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: List root directory
-        run: ls -la ../
+        run: ls ${GITHUB_WORKSPACE}
       - name: Build static files
         id: build
-        run: make file
+        run: bash -c "cd ${GITHUB_WORKSPACE} && ./build.sh"
       - name: Upload static files as artifact
         id: deployment
         uses: actions/upload-pages-artifact@v3 # or specific "vX.X.X" version tag for this action
