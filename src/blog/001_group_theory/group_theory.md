@@ -3,7 +3,7 @@ title: GROUP-ing my thoughts on GROUP theory
 date: 2025-01-09
 ---
 
-# intro:
+# intro<span>:</span>
 
 As 2025 begins (after what I perceive to be a not-so-good finals week) and people are out and about living it up outside (or inside, if that's what you prefer), 
 I decided it would be an <i>optimal</i> use of my time to understand the premise of Group Theory.
@@ -17,12 +17,11 @@ and to be able to retain such a title,
 I must at least have some fundamental understanding of what group-theory is before
 coming up with some legible argument as to why group-theory is the greatest of all time.
 
-
 ## so what is group theory?
 
 A quick browse of any basic definition of 'group theory' will most likely net you two possible explanations:
 
-::: li/t
+::: list
 - the [wikipedia](https://en.wikipedia.org/wiki/Group_theory) one stating that it is just the <b>study of groups</b> (super insightful really)
 - the slightly more-descriptive-yet-still-not-so-descriptive one stating that it is the <b>study of symmetry</b>
 :::
@@ -32,7 +31,7 @@ A quick browse of any basic definition of 'group theory' will most likely net yo
 Now, the definition of a group is a:
 
 ::: important
-### Group: 
+### Group<span>:</span> 
 A <b>non-empty</b> set of elements, $G$, with an operation, $\cdot$, that takes two elements of $G$ and combines them to produce another element of $G$.
 
 <br/>
@@ -70,7 +69,7 @@ To put it simply, Groups are just an <b>abstraction</b> of symmetry.
 The definition of "abstraction" that [Wikipedia](https://en.wikipedia.org/wiki/Abstraction_(mathematics)) supplies is that:
 
 ::: important
-### Abstraction
+### Abstraction<span>:</span>
 process of extracting the underlying structures, patterns or properties of a mathematical concept,
 removing any dependence on real world objects with which it might originally have been connected,
 and generalizing it so that it has wider applications
@@ -90,7 +89,7 @@ and provide us with a universal framework to manipulate quantities.
 In fact, if you take a step back and revisit the definition of a group, you can view it as a way of formalizing the <b>essential rules</b> of symmetry:
 
 ::: important
-### Group:
+### Group<span>:</span>
 
 A <b>non-empty</b> set of elements, $G$, with an operation, $\cdot$, that takes two elements of $G$ and combines them to produce another element of $G$.
 
@@ -105,7 +104,7 @@ The set of elements has to satisfy the axioms (established properties) below:
 1. <b>associativity</b> - for any $x, y, z$ in $G$, we have $(x \cdot y) \cdot z = x \cdot (y \cdot z)$
 
 ::: note
-- symmetries are associative as it does not matter how we group them; as long as the order of the operations is preserved, the end result will remain identical {.note}
+- symmetries are associative as it does not matter how we group them; as long as the order of the operations are preserved, the end result will remain identical 
 :::
 
 2. <b>identity</b> - there exists an <b>identity element</b>, $e$, such that $e \cdot x = x$
@@ -121,19 +120,17 @@ The set of elements has to satisfy the axioms (established properties) below:
 ::: 
 :::
 
-Thus, by providing such a general definition for groups, this gives us a way to 
-
 In other words, since groups aim to <b>abstract</b> away from the particularities of all the objects involved,
 you can view the definition of a group as an attempt to formalize the essential rules of symmetry:
 
 ### wait, why do we want to abstract symmetry in the first place?
 
 The occurence of symmetry is suprisingly common, from the shape of snowflakes,
-to architectural design and more.[^1]
+to its presence in architectural design and even bell ringing.[^1]
 The beauty of abstraction is that once you generate an abstract definition for a concept,
 any time these properties are satisfied, you can apply the same reasoning, tools, and theorems across a wide variety of situations.
 
-#### Important disclaimer:
+#### Important disclaimer<span>:</span>
 
 Even though this was the perfect segway for me to start rattling through a lot of Group Theory's significant use-cases in science,
 after trying to disect and summarise Galois Theory in a digestable manner for non-mathematicians,
@@ -144,7 +141,7 @@ From Galois Theory in Algebra to the Lorentz group in Physics, all of these topi
 which is half the reason why I decided to leave out some more monumental discoveries that were made using group theory,
 and decided to explore some niche applications of group theory.[^2]
 
-#### Take the <b>Rubik's Cube</b> for example:
+#### Take the <b>Rubik's Cube</b> for example<span>:</span>
 
 When you shuffle the cube from it's "solved" position, the result is one of the many shuffled positions of the cube that it could take.
 To reach such a position, there will always exist a set of moves of the cube that you can take to reach it.
@@ -155,15 +152,15 @@ and as long as the order of the move sequence remains constant, the ending posit
 
 As a result, there exists a [Rubik's Cube Group](https://en.wikipedia.org/wiki/Rubik%27s_Cube_group) where each element of the Group is a unique position of the cube.
 
-Knowledge of the Rubik's Cube Group, especially for finding the God's Number, 
-as Morwen Thistlewaite was credited for mathematically devising a method for solving any 3x3 in a maximum of 52 moves using [groups](https://www.jaapsch.net/puzzles/thistle.htm).
+Understanding the Rubik's Cube Group proved highly valuable, particularly in determining God’s Number. 
+Morwen Thistlethwaite is recognized for his mathematical approach, which used group theory to develop a method capable of solving any 3x3 cube in at most [52 moves](https://www.jaapsch.net/puzzles/thistle.htm).
 
 In 1981, this was quite an important theoretical break-through as it intends on slowly 
 reducing the cube to subgroups (subsets of the original groups, that satisfies all the conditions of a group) 
 of the original Rubik's Cube group that only contains positions which can be solved without, for example, using quarter turns of the upper and bottom face.
 With the further optimisation of the Thistlewaite Algorithm, and improvement to computing technology, several researchers were able to eventually deduce that [God's Number is 20](https://cube20.org/).
 
-#### or the Fifteen Puzzle:
+#### or the Fifteen Puzzle<span>:</span>
 
 A much simpler example to consider would be the fifteen puzzle.
 
@@ -173,7 +170,7 @@ For those unaware, the fifteen puzzle is a 4x4 sliding puzzle containing tiles o
 where the goal is to order the tiles into numberical order.
 Whilst it is definitely possible to trivialise the puzzle by splitting the puzzle into sub-problems,
 how would you determine if any provided configuration of the fifteen puzzle is solvable or not?
-We will start by attempting a simpler problem to this posed by [Sam Loyd](https://en.wikipedia.org/wiki/Sam_Loyd),
+We will start by attempting a simpler problem from [Sam Loyd](https://en.wikipedia.org/wiki/Sam_Loyd),
 where he posed a wager for $1000 to anyone that could provide a solution to the fifteen puzzle with the position of 14 and 15 interchanged.
 
 Similar to the Rubik's Cube, we can follow similar steps to show that all possible configurations of the fifteen puzzle can be arranged into a group
@@ -187,9 +184,9 @@ Hence, if we restrict all possible movesets to always leave the empty slot in th
 we will find that each position follows the ruleset of a group structure. 
 In fact, by using properties derived from a well-studied group, 
 we can show that, with the position of 14 and 15 interchanged, 
-the **fifteen puzzle** is unsolveable.
+the fifteen puzzle is **unsolveable**.
 
-We will start off by defining a **permutation** of a set, $S$, as a one-to-one mapping from $S$ to itself.
+We will start off by defining a **permutation** of a set, $S$, as a one-to-one mapping from the set $S$ to itself.
 Using the position below as an example, we can describe the permutation using the function $\sigma$ such that:
 $$
 \begin{equation*}
@@ -234,8 +231,8 @@ $$
 (1, 2, 3, 4) = (1, 4)(1, 3)(1, 2)
 $$
 
-You can do a similar example to before to prove for equality:
-e.g. for $2$, the cycle $(1, 2)$ sends $2$ to $1$, then the cycle $(1, 3)$ sends $1$ to $3$, meaning the RHS permutation sends $2$ to $3$.
+Using a similar method to before, you can prove for equality by seeing if the permutation sends each number in the same way:
+e.g. for $2$, the cycle $(1, 2)$ sends $2$ to $1$, then the cycle $(1, 3)$ sends $1$ to $3$ before reaching the end, meaning the RHS permutation sends $2$ to $3$.
 
 Therefore, by reducing the original cycle notation, we can rewrite it in terms of 13 transpositions:
 
@@ -255,16 +252,16 @@ Similar to the fact that integers have parity (odd/even), permutations also have
 
 Note that like how an integer can not be simultaneously even and odd,
 permutations can also not be simultaneously even and odd 
-(meaning if you can write a permutation in terms of a product of an **odd** number of transpositions, you can **only** write it as a product of **odd** number of transpositions).
+(meaning if you can write a permutation in terms of a product of an **odd** number of transpositions, you can **only** write it as a product of an **odd** number of transpositions).
 
-Then, since the permutation $(14, 15)$ is clearly odd, if we can prove that the all possible permutations of the fifteen puzzle are even, 
+Then, since the permutation $(14, 15)$ is clearly odd, if we can prove that all possible permutations of the fifteen puzzle are even, 
 we can prove that it is impossible to win $1000 from Sam Loyd.
 
 This turns out to be quite intuitive if you just pay attention to how the empty slot moves when you shuffle the puzzle.
 Since the empty slot will always have to return back to the bottom right position,
 you realise that for any up movement, there will be a corresponding down movement,
 and for any left movement, there will be a corresponding right movement.
-Since every move is paired and we can represent each move by a transposition (since we are only swapping the tiles on 2 slots),
+Since every move is paired and we can represent each move by a transposition (since each move we make swaps the tiles on 2 adjacent slots),
 it means that no matter what permutation the puzzle ends up in, 
 we know that it must be able to be written in terms of an **even** number of transpositions.
 
@@ -278,18 +275,18 @@ Intuitively, that implies all the possible permutations of the fifteen puzzle is
 In fact, it has been proven that each permutation correlates to a well-known group, $A_{15}$
 (or the [alternating group](https://en.wikipedia.org/wiki/Alternating_group) of degree 15),
 which is a finite set that consists of all the even permutations in the corresponding finite symmetric group.
-You can read more about this topic [here](https://web.archive.org/web/20210107214840/https://faculty.etsu.edu/beelerr/fifteen-supp.pdf).
+You can read more about the fifteen puzzle and its relation to the alternating group of degree 15 [here](https://web.archive.org/web/20210107214840/https://faculty.etsu.edu/beelerr/fifteen-supp.pdf).
 
 
-## In summary:
+## In summary<span>:</span>
 
 ::: list
 - Groups Theory aims to abstract the conecpt of symmetry, providing a framework to study and compare symmetric properties without dealing with objects physical properties
 - Symmetry is a transformation that aims to preserve an object's structure, and is pervasive across many fields in science
 - Applications of Group Theory can uncover patterns everywhere (Rubik's Cube, 15 Puzzle etc.)
-- Blogging is hard
+- Blogging is hard (and it is probably a bad idea to source information from Wikipedia)
 :::
 
 [^1]: In fact, the reason that mathematicians have thought of devising a formal definition for groups in the first place goes to show how useful they are. 
 
-[^2]: The other reason might just be due to time limitations... whole undergraduate courses take me a long time to digest...
+[^2]: The other half might just be due to time limitations... whole undergraduate courses take me a long time to digest...

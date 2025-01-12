@@ -83,7 +83,8 @@ h2 {
 
 h1 > span,
 h2 > span,
-h3 > span {
+h3 > span,
+h4 > span {
   color: #ff3000;
 }
 
