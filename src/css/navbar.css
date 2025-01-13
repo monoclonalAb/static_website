@@ -1,3 +1,16 @@
+@font-face {
+  font-family: "Eiko";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/eiko/PPEiko-Medium.otf") format("truetype");
+}
+@font-face {
+  font-family: "Eiko Bold";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/eiko/PPEiko-Heavy.otf") format("truetype");
+}
+
 nav {
   width: 100vw;
   /* display: flex; */
@@ -15,6 +28,7 @@ nav {
 }
 
 .logo > h1 > a {
+  font-family: "Helvetica";
   color: #000000;
   text-align: left;
   font-size: 15pt;
@@ -37,12 +51,14 @@ nav li {
 }
 
 nav li + li::before {
+  font-family: "Eiko";
   content: "\00a0~\00a0\00a0";
   font-size: 20px;
 }
 
 nav,
 nav a {
+  font-family: "Eiko";
   color: black;
   text-decoration: none;
   font-style: normal;

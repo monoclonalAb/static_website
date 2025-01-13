@@ -11,12 +11,6 @@
   font-weight: 400;
   src: url("../fonts/helvetica/Helvetica-Bold.ttf") format("truetype");
 }
-@font-face {
-  font-family: "Elza";
-  font-style: normal;
-  font-weight: 400;
-  src: url("../fonts/elza/ElzaTrial-Regular.otf") format("truetype");
-}
 
 * {
   margin: 0;
