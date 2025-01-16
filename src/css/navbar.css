@@ -2,13 +2,13 @@
   font-family: "Eiko";
   font-style: normal;
   font-weight: 400;
-  src: url("../fonts/eiko/PPEiko-Medium.otf") format("truetype");
+  src: url("../fonts/eiko/PPEiko-Medium.otf") format("opentype");
 }
 @font-face {
   font-family: "Eiko Bold";
   font-style: normal;
   font-weight: 400;
-  src: url("../fonts/eiko/PPEiko-Heavy.otf") format("truetype");
+  src: url("../fonts/eiko/PPEiko-Heavy.otf") format("opentype");
 }
 
 nav {
