@@ -33,7 +33,9 @@ jobs:
           ls -la ${{ github.workspace }}
           
       - name: Give execution permissions
-        run: chmod +x src/blog/build.sh
+        run: |
+          chmod +x src/blog/build.sh
+          chmod +x src/leetcode/build.sh
 
       - name: Install dependencies
         run: |
