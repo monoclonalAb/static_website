@@ -11,12 +11,16 @@ mkdir -p $dest
 # copy (-R = recursively) all the files from $dir 
 cp -R $dir/* $dest
 # remove (-rf = forcefully and recursively) these folders
-rm -rf $dest/thoughts
+rm -rf $dest/blog
 rm -rf $dest/parts
+rm -rf $dest/leetcode
 
-# # build thoughts
+# build thoughts
 $dir/blog/build.sh
-#
+
+# build leetcode
+$dir/leetcode/build.sh
+
 # replace <!-- NAV --> with src/parts/nav.html
 nav=$dir/parts/nav.html # nav.html file
 # converts all double quotes (") to single quotes (')

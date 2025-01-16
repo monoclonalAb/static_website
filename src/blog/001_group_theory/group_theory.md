@@ -22,8 +22,8 @@ coming up with some legible argument as to why group-theory is the greatest of a
 A quick browse of any basic definition of 'group theory' will most likely net you two possible explanations:
 
 ::: list
-- the [wikipedia](https://en.wikipedia.org/wiki/Group_theory) one stating that it is just the <b>study of groups</b> (super insightful really)
-- the slightly more-descriptive-yet-still-not-so-descriptive one stating that it is the <b>study of symmetry</b>
+- the [wikipedia](https://en.wikipedia.org/wiki/Group_theory) one stating that it is just the **study of groups** (super insightful really)
+- the slightly more-descriptive-yet-still-not-so-descriptive one stating that it is the **study of symmetry**
 :::
 
 ### wait, what are groups?
@@ -32,15 +32,15 @@ Now, the definition of a group is a:
 
 ::: important
 ### Group<span>:</span> 
-A <b>non-empty</b> set of elements, $G$, with an operation, $\cdot$, that takes two elements of $G$ and combines them to produce another element of $G$.
+A **non-empty** set of elements, $G$, with an operation, $\cdot$, that takes two elements of $G$ and combines them to produce another element of $G$.
 
 <br/>
 
 The set of elements has to satisfy the axioms (established properties) below:
 
-1. <b>associativity</b> - for any $x, y, z$ in $G$, we have $(x \cdot y) \cdot z = x \cdot (y \cdot z)$
-2. <b>identity</b> - there exists an <b>identity element</b>, $e$, such that $e * x = x$
-3. <b>inverse</b> - for any element in the set, $a$, there will always exist an <b>inverse element</b>, commonly denoted $a^{-1}$, such that $a \times a^{-1} = e$ 
+1. **associativity** - for any $x, y, z$ in $G$, we have $(x \cdot y) \cdot z = x \cdot (y \cdot z)$
+2. **identity** - there exists an <b>identity element</b>, $e$, such that $e * x = x$
+3. **inverse** - for any element in the set, $a$, there will always exist an <b>inverse element</b>, commonly denoted $a^{-1}$, such that $a \times a^{-1} = e$ 
 :::
 
 At first glance, this definition does not provide much intuition for what its use cases are,
@@ -53,16 +53,16 @@ as it is generally defined as:
 
 ::: important
 ### Symmetry<span>:</span>
-a collection of all the operations that preserves an object's <b>underlying structure</b> (basically, leaving the object unchanged).
+a collection of all the operations that preserves an object's **underlying structure** (basically, leaving the object unchanged).
 :::
 
 Using geometrical symmetry as an example,
-rotations and reflections are <b>symmetry operations</b> as a $90$, $180$, or $270$ degree rotation
+rotations and reflections are **symmetry operations** as a $90$, $180$, or $270$ degree rotation
 or a reflection across either of the diagonals of a square will leave it looking the same as before.
 
 ### huh, what is the relationship between groups and symmetry then?
 
-To put it simply, Groups are just an <b>abstraction</b> of symmetry. 
+To put it simply, Groups are just an **abstraction** of symmetry. 
 
 #### and, what does that mean exactly?
 
@@ -83,44 +83,44 @@ when we have 4 apples, 4 houses or 4 successful mathematicians,
 we see that the number itself is not attached to any physical object in particular,
 but is just there to represent the quantity of objects present.
 
-In essence, numbers <b>abstract</b> away from the specific nature of each objects involved
+In essence, numbers **abstract** away from the specific nature of each objects involved
 and provide us with a universal framework to manipulate quantities.
 
-In fact, if you take a step back and revisit the definition of a group, you can view it as a way of formalizing the <b>essential rules</b> of symmetry:
+In fact, if you take a step back and revisit the definition of a group, you can view it as a way of formalizing the **essential rules** of symmetry:
 
 ::: important
 ### Group<span>:</span>
 
-A <b>non-empty</b> set of elements, $G$, with an operation, $\cdot$, that takes two elements of $G$ and combines them to produce another element of $G$.
+A **non-empty** set of elements, $G$, with an operation, $\cdot$, that takes two elements of $G$ and combines them to produce another element of $G$.
 
 ::: note
-- a symmetry of an object combined with another symmetry will <b>always</b> result in another symmetry 
+- a symmetry of an object combined with another symmetry will **always** result in another symmetry 
 :::
 
 <br/>
 
 The set of elements has to satisfy the axioms (established properties) below:
 
-1. <b>associativity</b> - for any $x, y, z$ in $G$, we have $(x \cdot y) \cdot z = x \cdot (y \cdot z)$
+1. **associativity** - for any $x, y, z$ in $G$, we have $(x \cdot y) \cdot z = x \cdot (y \cdot z)$
 
 ::: note
 - symmetries are associative as it does not matter how we group them; as long as the order of the operations are preserved, the end result will remain identical 
 :::
 
-2. <b>identity</b> - there exists an <b>identity element</b>, $e$, such that $e \cdot x = x$
+2. **identity** - there exists an <b>identity element</b>, $e$, such that $e \cdot x = x$
 
 ::: note
 - the identity element (keeping the object fixed) is always a symmetry
 ::: 
 
-3. <b>inverse</b> - for any element in the set, $a$, there will always exist an inverse element, commonly denoted $a^{-1}$, such that $a \cdot a^{-1} = e$ 
+3. **inverse** - for any element in the set, $a$, there will always exist an inverse element, commonly denoted $a^{-1}$, such that $a \cdot a^{-1} = e$ 
 
 ::: note
 - any symmetry should be reversable by just "undoing" the symmetry
 ::: 
 :::
 
-In other words, since groups aim to <b>abstract</b> away from the particularities of all the objects involved,
+In other words, since groups aim to **abstract** away from the particularities of all the objects involved,
 you can view the definition of a group as an attempt to formalize the essential rules of symmetry:
 
 ### wait, why do we want to abstract symmetry in the first place?
@@ -141,7 +141,7 @@ From Galois Theory in Algebra to the Lorentz group in Physics, all of these topi
 which is half the reason why I decided to leave out some more monumental discoveries that were made using group theory,
 and decided to explore some niche applications of group theory.[^2]
 
-#### Take the <b>Rubik's Cube</b> for example<span>:</span>
+#### Take the **Rubik's Cube** for example<span>:</span>
 
 When you shuffle the cube from it's "solved" position, the result is one of the many shuffled positions of the cube that it could take.
 To reach such a position, there will always exist a set of moves of the cube that you can take to reach it.
@@ -225,7 +225,7 @@ You now repeat these steps for the remaining cycles with the number $4$ until yo
 Thus, giving us the result that the permutation sends $15$ to $4$
 (you can check this with every number from $1$ to $15$ and will see that it matches every value in the "two-line" notation).
 
-These cycles can then be further reduced to <b>transpositions</b> (or cycles of length 2).
+These cycles can then be further reduced to **transpositions** (or cycles of length 2).
 For example,
 $$
 (1, 2, 3, 4) = (1, 4)(1, 3)(1, 2)

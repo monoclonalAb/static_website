@@ -65,6 +65,11 @@ time {
   font-weight: normal;
 }
 
+difficulty {
+  text-align: right;
+  direction: ltr;
+}
+
 .paragraph {
   border-left: 3px solid #ff3000;
   border-radius: 0px;

@@ -15,28 +15,33 @@ touch $dir/titles_dates.tmp
 # Author: https://github.com/cr0sh
 # his blog: https://blog.cro.sh/
 
-for subdir in $(find $dir -type d); do
-    for file in $(find $subdir/*.md -not -name index.md); do
-      # load frontmatter
-      pandoc -s $file -o $file.tmp --template=$dir/frontmatter.bash
-      source $file.tmp
-      echo "$doc_date;$doc_title;$file" >> $dir/titles_dates.tmp
+for subdir in $(find $dir -type d -not -path "$dir"); do
+  # basename extracts the name of the directory/file at the end of the path
+  dir_name=$(basename $subdir)
+  # '#' removes a prefix from a string
+  # '*_' matches everything up to and including the first underscore
+  file="$subdir/${dir_name#*_}.md"
 
-      # compile file
-      pretty_date=$(echo $doc_date | xargs date +'%B %d, %Y' -d)
-      output=$(basename ${file%.md}.html)
-      pandoc -s $file -o $dest/$output --template=$dir/article-template.html \
-             --mathml
-      sed -i "s/<!-- TIME -->/$pretty_date/" $dest/$output
-  done
+  # load frontmatter
+  pandoc -s $file -o $file.tmp --template=$dir/frontmatter.bash
+  source $file.tmp
+  echo "$doc_date;$doc_title;$file" >> $dir/titles_dates.tmp
+
+  # compile file
+  pretty_date=$(echo $doc_date | xargs date +'%B %d, %Y' -d)
+  output=$(basename ${file%.md}.html)
+  pandoc -s $file -o $dest/$output --template=$dir/article-template.html \
+         --mathml
+  sed -i "s/<!-- TIME -->/$pretty_date/" $dest/$output
+
+  # clear temporary file
+  rm -rf $file.tmp
 done
 
 # sort posts by date
 sort -r $dir/titles_dates.tmp > $dir/sorted.tmp
 
 # generate index page
-pandoc -s $dir/index.md -o $dest/../blog.html \
-       --template=$dir/index-template.html
 while IFS= read line; do
   doc_title=$(echo $line | cut -d ';' -f2)
   doc_date=$(echo $line | cut -d ';' -f1 | xargs date +'%B %d, %Y' -d)
