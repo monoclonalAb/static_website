@@ -40,7 +40,6 @@ b {
   align-items: center;
 
   z-index: 2;
-  overflow: hidden;
 }
 
 .title {
@@ -56,6 +55,13 @@ b {
   z-index: 2;
 }
 
+.first-name {
+  position: absolute;
+  top: 50vh;
+  left: 50vw;
+  transform: translate(calc(-50% + 90px), calc(-50% - 130px));
+}
+
 .first-name::after {
   content: "@monoclonalAb";
   font-size: 10px;
@@ -68,6 +74,15 @@ b {
 
   border-top: 5px solid #ff3000;
   border-right: 5px solid #ff3000;
+}
+
+.last-name {
+  position: absolute;
+  top: 50vh;
+  left: 50vw;
+  transform: translate(calc(-50% - 10px), calc(-50% - 50px));
+  /* transform: translate(125px, -20px); */
+  direction: rtl;
 }
 
 .last-name::after {
@@ -97,22 +112,6 @@ b {
 
   font-size: 12pt;
   font-family: "Helvetica";
-}
-
-.first-name {
-  position: absolute;
-  top: 50vh;
-  left: 50vw;
-  transform: translate(calc(-50% + 90px), calc(-50% - 80px));
-}
-
-.last-name {
-  position: absolute;
-  top: 50vh;
-  left: 50vw;
-  transform: translate(calc(-50% - 10px), -50%);
-  /* transform: translate(125px, -20px); */
-  direction: rtl;
 }
 
 .github {

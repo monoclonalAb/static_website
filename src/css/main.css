@@ -19,8 +19,8 @@
     format("truetype");
 }
 @font-face {
-  font-family: "Baskerville Italic";
-  font-style: normal;
+  font-family: "Baskerville";
+  font-style: italic;
   font-weight: 400;
   src: url("../fonts/baskerville/LibreBaskerville-Italic.ttf")
     format("truetype");
@@ -108,8 +108,8 @@ h4 > span {
 
 time {
   color: gray;
-  /* font-style: italic; */
-  font-family: "Baskerville Italic";
+  font-style: italic;
+  font-family: "Baskerville";
   font-size: 75%;
   font-weight: normal;
 }
