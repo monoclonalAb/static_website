@@ -11,6 +11,20 @@
   font-weight: 400;
   src: url("../fonts/helvetica/Helvetica-Bold.ttf") format("truetype");
 }
+@font-face {
+  font-family: "Baskerville";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/baskerville/LibreBaskerville-Regular.ttf")
+    format("truetype");
+}
+@font-face {
+  font-family: "Baskerville Italic";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/baskerville/LibreBaskerville-Italic.ttf")
+    format("truetype");
+}
 
 * {
   margin: 0;
@@ -80,6 +94,24 @@ h2 > span,
 h3 > span,
 h4 > span {
   color: #ff3000;
+}
+
+.sidebar {
+  border-left: 3px solid #ff3000;
+  border-radius: 0px;
+  row-gap: 10px;
+}
+
+.sidebar:not(ol):not(ul):not(:has(ol)):not(:has(ul)) {
+  padding-left: 15px;
+}
+
+time {
+  color: gray;
+  /* font-style: italic; */
+  font-family: "Baskerville Italic";
+  font-size: 75%;
+  font-weight: normal;
 }
 
 /* extra styling points! */

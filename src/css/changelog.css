@@ -15,3 +15,9 @@ body > h1 {
   margin: 0 auto;
   padding: 10px;
 }
+
+release {
+  color: black;
+  font-family: "Helvetica Bold";
+  font-size: 125%;
+}

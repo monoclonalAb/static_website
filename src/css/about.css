@@ -71,13 +71,6 @@ h1 {
   text-decoration: none;
 }
 
-time {
-  color: gray;
-  font-style: italic;
-  font-family: "EB Garamond";
-  font-weight: normal;
-}
-
 difficulty {
   text-align: right;
   direction: ltr;
@@ -86,16 +79,6 @@ difficulty {
 .paragraph {
   border-left: 3px solid #ff3000;
   border-radius: 0px;
-  padding-left: 15px;
-}
-
-.sidebar {
-  border-left: 3px solid #ff3000;
-  border-radius: 0px;
-  row-gap: 10px;
-}
-
-.sidebar:not(ol):not(ul):not(:has(ol)):not(:has(ul)) {
   padding-left: 15px;
 }
 
@@ -136,12 +119,6 @@ code {
 ul,
 ol {
   padding-left: 25px;
-}
-
-.sidebar {
-  border-left: 3px solid #ff3000;
-  border-radius: 0px;
-  row-gap: 10px;
 }
 
 .footnotes {
