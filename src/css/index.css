@@ -12,7 +12,7 @@
 }
 
 body {
-  overflow: none;
+  overflow: hidden;
   position: relative;
 }
 
@@ -28,52 +28,32 @@ b {
 }
 
 #site-container {
-  height: 100%;
+  height: 100vh;
+  width: 100vw;
 
   display: flex;
   flex-direction: column;
   row-gap: 10px;
 
+  position: relative;
   justify-content: center;
   align-items: center;
 
   z-index: 2;
-}
-
-#above-title {
-  /* background-color: black; */
-  flex-grow: 1;
-  width: 350px;
-  transform: translate(-250px, 0px);
-}
-
-#below-title {
-  /* background-color: #187697; */
-  flex-grow: 1;
-  width: 350px;
-  transform: translate(250px, 0px);
+  overflow: hidden;
 }
 
 .title {
-  --top: 80px;
-  --bottom: 60px;
-  --left: 260px;
-  --right: 48px;
+  top: 50vh;
+  left: 50vw;
 
-  position: absolute;
-
-  top: calc(50vh - var(--top));
-  left: calc(50vw - var(--left));
-  height: calc(var(--top) + var(--bottom));
-  width: calc(var(--left) + var(--right));
-  clip-path: inset(0px 0px 0px 0px);
+  height: 160px;
+  width: 500px;
+  clip-path: inset(19px 202px 0px 0px);
 
   background-color: #000000;
 
   z-index: 2;
-  border-radius: 20px 0px 0px 0px;
-
-  /* border-bottom: 5px solid #ff3000; */
 }
 
 .first-name::after {
@@ -103,10 +83,7 @@ b {
   border-bottom: 5px solid #ff3000;
 }
 
-.inverse {
-  color: black;
-}
-
+.inverse,
 .inverse > b {
   color: black;
 }
@@ -123,14 +100,14 @@ b {
 }
 
 .first-name {
-  position: fixed;
+  position: absolute;
   top: 50vh;
   left: 50vw;
   transform: translate(calc(-50% + 90px), calc(-50% - 80px));
 }
 
 .last-name {
-  position: fixed;
+  position: absolute;
   top: 50vh;
   left: 50vw;
   transform: translate(calc(-50% - 10px), -50%);
@@ -147,7 +124,7 @@ b {
 
 .items {
   position: relative;
-  top: 100px;
+  /* top: 100px; */
 }
 
 .items li {
