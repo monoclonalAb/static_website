@@ -21,7 +21,7 @@ coming up with some legible argument as to why group-theory is the greatest of a
 
 A quick browse of any basic definition of 'group theory' will most likely net you two possible explanations:
 
-::: list
+::: sidebar
 - the [wikipedia](https://en.wikipedia.org/wiki/Group_theory) one stating that it is just the **study of groups** (super insightful really)
 - the slightly more-descriptive-yet-still-not-so-descriptive one stating that it is the **study of symmetry**
 :::
@@ -164,7 +164,7 @@ With the further optimisation of the Thistlewaite Algorithm, and improvement to 
 
 A much simpler example to consider would be the fifteen puzzle.
 
-![Original photo from [here](https://michael.kim/blog/puzzle)](./001_group_theory/15_puzzle_solved.png){.medium_img}
+![Original photo from [here](https://michael.kim/blog/puzzle)](./../images/blog/001_group_theory/15_puzzle_solved.png){.medium_img}
 
 For those unaware, the fifteen puzzle is a 4x4 sliding puzzle containing tiles ordered from 1 to 15,
 where the goal is to order the tiles into numberical order.
@@ -194,7 +194,7 @@ $$
 \end{equation*}
 $$
 
-![Original photo from [here](https://michael.kim/blog/puzzle)](./001_group_theory/15_puzzle_shuffled.png){.medium_img}
+![Original photo from [here](https://michael.kim/blog/puzzle)](./../images/blog/001_group_theory/15_puzzle_shuffled.png){.medium_img}
 
 In fact, we can define each permutation using a "two-line notation" with the top line defining the original "slot"
 and the second line to define the tile that is currently occupying the slot. Using the above example, we get:
@@ -245,7 +245,7 @@ $$
 
 Similar to the fact that integers have parity (odd/even), permutations also have parity:
 
-:::list
+:::sidebar
 - odd permutations can be rewritten as a product of an **odd** number of transpositions
 - even permutations can be rewritten as a product of an **even** number of transpositions
 :::
@@ -280,11 +280,11 @@ You can read more about the fifteen puzzle and its relation to the alternating g
 
 ## In summary<span>:</span>
 
-::: list
+::: sidebar
 - Groups Theory aims to abstract the conecpt of symmetry, providing a framework to study and compare symmetric properties without dealing with objects physical properties
 - Symmetry is a transformation that aims to preserve an object's structure, and is pervasive across many fields in science
 - Applications of Group Theory can uncover patterns everywhere (Rubik's Cube, 15 Puzzle etc.)
-- Blogging is hard (and it is probably a bad idea to source information from Wikipedia)
+- Blogging is hard
 :::
 
 [^1]: In fact, the reason that mathematicians have thought of devising a formal definition for groups in the first place goes to show how useful they are. 

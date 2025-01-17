@@ -1,3 +1,16 @@
+@font-face {
+  font-family: "Inconsolata";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/inconsolata/Inconsolata-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Menlo";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/Menlo-Regular.ttf") format("truetype");
+}
+
 body {
   min-height: 100%;
 }
@@ -76,10 +89,14 @@ difficulty {
   padding-left: 15px;
 }
 
-.list {
+.sidebar {
   border-left: 3px solid #ff3000;
   border-radius: 0px;
   row-gap: 10px;
+}
+
+.sidebar:not(ol):not(ul):not(:has(ol)):not(:has(ul)) {
+  padding-left: 15px;
 }
 
 .important {
@@ -97,6 +114,20 @@ difficulty {
   color: #666666;
 }
 
+code:not(code.sourceCode) {
+  background-color: #000a2008;
+  border-color: #0000000d;
+  border-radius: 5px;
+  border-width: 1px;
+  border-style: solid;
+  color: #262626bf;
+  font-family: Menlo, sans-serif;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  padding: 0.125rem;
+  white-space: pre-wrap;
+}
+
 code {
   font-family: "Inconsolata", monospace;
   font-size: 10pt;
@@ -105,6 +136,12 @@ code {
 ul,
 ol {
   padding-left: 25px;
+}
+
+.sidebar {
+  border-left: 3px solid #ff3000;
+  border-radius: 0px;
+  row-gap: 10px;
 }
 
 .footnotes {
@@ -151,7 +188,7 @@ code.sourceCode {
   position: relative;
 }
 div.sourceCode {
-  margin: 1em 0;
+  margin: 0em 0;
 }
 pre.sourceCode {
   margin: 0;

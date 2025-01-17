@@ -15,3 +15,10 @@ body > h1 {
   margin: 0 auto;
   padding: 10px;
 }
+
+.sidebar {
+  border-left: 3px solid #ff3000;
+  border-radius: 0px;
+  row-gap: 10px;
+  padding-left: 15px;
+}
