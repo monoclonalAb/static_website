@@ -52,11 +52,8 @@ while IFS= read line; do
   daily_difficulty=$(echo $line | cut -d ';' -f5)
 
   href="<a href='leetcode\\/${daily_date}.html'>$daily_title<\\/a>"
-  echo $href
   pattern="<!-- CONTENT -->"
-  echo $pattern
   replace="<li>$href <time>$daily_date<\\/time><\\/li>$pattern"
-  echo $replace
   sed -i "s/$pattern/$replace/g" $dest/../leetcode.html
 done < $dir/sorted.tmp
 
