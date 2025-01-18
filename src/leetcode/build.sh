@@ -26,6 +26,7 @@ for year in $(find $dir -type d -not -path "$dir"); do
       pandoc -s $file -o $file.tmp --template=$dir/frontmatter.bash
       source $file.tmp
       echo "$formatted_date;$daily_title;$daily_question_id;$daily_question_link;$daily_difficulty" >> $dir/question_data.tmp
+      echo "$formatted_date;$daily_title;$daily_question_id;$daily_question_link;$daily_difficulty"
       
       # compile file
       output=$(basename ${file%.md}.html)
@@ -42,6 +43,8 @@ done
 
 # sort posts by date
 sort -r $dir/question_data.tmp > $dir/sorted.tmp
+
+cp $dir/question_data.tmp $dest/
 sort -r $dir/question_data.tmp > $dest/sorted.tmp
 
 # generate index page
