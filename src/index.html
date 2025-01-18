@@ -68,5 +68,18 @@
         </h1>
       </div>
     </div>
+    <script>
+      const container = document.querySelectorAll(".title-container:has(.RHS)");
+      const name = document.querySelectorAll("h1.LHS.inverse");
+      // should only exist 1 container and 1 name element
+
+      if (container.length > 0) {
+        container[0].addEventListener("animationend", () => {
+          if (name.length > 0) {
+            name[0].style.color = "#000000";
+          }
+        });
+      }
+    </script>
   </body>
 </html>
