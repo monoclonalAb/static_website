@@ -42,6 +42,7 @@ done
 
 # sort posts by date
 sort -r $dir/question_data.tmp > $dir/sorted.tmp
+sort -r $dir/question_data.tmp > $dest/sorted.tmp
 
 # generate index page
 while IFS= read line; do
