@@ -18,10 +18,11 @@ if [ ! -e "$dir/$today/${today//\//-}.md" ]; then
         -o $dir/daily.json.tmp
 
     title=$(grep -oP '"title":\s*"\K[^"]+' $dir/daily.json.tmp)
+    formatted_title=$(echo "$title" | sed 's/ /-/g')
     question_id=$(grep -oP '"frontendQuestionId":\s*"\K[^"]+' $dir/daily.json.tmp)
     question_link="https://leetcode.com$(grep -oP '"link":\s*"\K[^"]+' $dir/daily.json.tmp)"
     difficulty=$(grep -oP '"difficulty":\s*"\K[^"]+' $dir/daily.json.tmp)
-    echo -e "---\ntitle: \"$title\"\nquestion_id: \"$question_id\"\nquestion_link: \"$question_link\"\ndifficulty: \"$difficulty\"\n---$q" > $dir/${today}/$(date -u +'%Y-%m-%d').md
+    echo -e "---\ntitle: \"$formatted_title\"\nquestion_id: \"$question_id\"\nquestion_link: \"$question_link\"\ndifficulty: \"$difficulty\"\n---$q" > $dir/${today}/$(date -u +'%Y-%m-%d').md
 else
     echo 'Markdown file exists'
 fi

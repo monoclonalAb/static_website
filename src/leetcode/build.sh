@@ -26,7 +26,6 @@ for year in $(find $dir -type d -not -path "$dir"); do
       pandoc -s $file -o $file.tmp --template=$dir/frontmatter.bash
       source $file.tmp
       echo "$formatted_date;$daily_title;$daily_question_id;$daily_question_link;$daily_difficulty" >> $dir/question_data.tmp
-      echo "$formatted_date;$daily_title;$daily_question_id;$daily_question_link;$daily_difficulty"
       
       # compile file
       output=$(basename ${file%.md}.html)
@@ -44,19 +43,17 @@ done
 # sort posts by date
 sort -r $dir/question_data.tmp > $dir/sorted.tmp
 
-cp $dir/question_data.tmp $dest/
-sort -r $dir/question_data.tmp > $dest/sorted.tmp
-
 # generate index page
 while IFS= read line; do
   echo $line
   daily_date=$(echo $line | cut -d ';' -f1 )
   daily_title=$(echo $line | cut -d ';' -f2)
+  formatted_daily_title=$(echo "$daily_title" | sed 's/-/ /g')
   daily_question_id=$(echo $line | cut -d ';' -f3)
   daily_question_link=$(echo $line | cut -d ';' -f4)
   daily_difficulty=$(echo $line | cut -d ';' -f5)
 
-  href="<a href='leetcode\\/${daily_date}.html'>$daily_title<\\/a>"
+  href="<a href='leetcode\\/${daily_date}.html'>$formatted_daily_title<\\/a>"
   pattern="<!-- CONTENT -->"
   replace="<li>$href <time>$daily_date<\\/time><\\/li>$pattern"
   sed -i "s/$pattern/$replace/g" $dest/../leetcode.html
