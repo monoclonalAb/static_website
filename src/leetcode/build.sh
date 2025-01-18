@@ -45,6 +45,7 @@ sort -r $dir/question_data.tmp > $dir/sorted.tmp
 
 # generate index page
 while IFS= read line; do
+  echo $line
   daily_date=$(echo $line | cut -d ';' -f1 )
   daily_title=$(echo $line | cut -d ';' -f2)
   daily_question_id=$(echo $line | cut -d ';' -f3)
