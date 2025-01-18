@@ -58,4 +58,4 @@ while IFS= read line; do
 done < $dir/sorted.tmp
 
 # clear all temporary files
-# rm -rf $dir/*.tmp
+rm -rf $dir/*.tmp
