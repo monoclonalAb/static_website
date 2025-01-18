@@ -6,10 +6,22 @@
   src: url("../fonts/helvetica/Helvetica.ttf") format("truetype");
 }
 @font-face {
-  font-family: "Helvetica Bold";
-  font-style: normal;
+  font-family: "Helvetica";
+  font-style: oblique;
   font-weight: 400;
+  src: url("../fonts/helvetica/Helvetica-Oblique.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Helvetica";
+  font-style: normal;
+  font-weight: 700;
   src: url("../fonts/helvetica/Helvetica-Bold.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Helvetica";
+  font-style: oblique;
+  font-weight: 700;
+  src: url("../fonts/helvetica/Helvetica-BoldOblique.ttf") format("truetype");
 }
 @font-face {
   font-family: "Baskerville";
@@ -49,30 +61,32 @@ cite {
   font-style: italic;
 }
 
-a {
+p a,
+dt a,
+dd a {
   color: #1c2129;
   font-style: italic;
 }
 
-a:visited {
-  text-decoration: none;
-}
-
-a:hover {
+p a:hover,
+dt a:hover,
+dd a:hover {
   color: #374151;
 }
 
-.underline-animation a {
+.underline-animation a,
+a.underline-animation {
   display: inline-block;
   position: relative;
 }
 
-.underline-animation a::after {
+.underline-animation a::after,
+a.underline-animation::after {
   content: "";
   position: absolute;
   width: 100%;
   transform: scaleX(0) translateY(4px);
-  height: 2px;
+  height: 5px;
   bottom: 0;
   left: 0;
   background-color: #ff3000;
@@ -80,7 +94,8 @@ a:hover {
   transform-origin: bottom center;
 }
 
-.underline-animation a:hover::after {
+.underline-animation a:hover::after,
+a.underline-animation:hover::after {
   transform: scaleX(1) translateY(4px);
 }
 

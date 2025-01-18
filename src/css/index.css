@@ -5,26 +5,52 @@
   src: url("../fonts/eiko/PPEiko-Medium.otf") format("opentype");
 }
 @font-face {
-  font-family: "Eiko Bold";
+  font-family: "Eiko";
   font-style: normal;
-  font-weight: 400;
+  font-weight: 700;
   src: url("../fonts/eiko/PPEiko-Heavy.otf") format("opentype");
 }
 
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  h1 {
+    font-size: 2rem;
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  h1 {
+    font-size: 3rem;
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  h1 {
+    font-size: 4rem;
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  h1 {
+    font-size: 6rem;
+  }
+}
+
+html,
 body {
   overflow: hidden;
+}
+
+body {
   position: relative;
 }
 
 h1 {
   color: white;
-  font-size: 60pt;
   font-family: "Helvetica";
-}
-
-b {
-  /* color: #dddddd; */
-  font-family: "Helvetica Bold";
 }
 
 #site-container {
@@ -42,60 +68,58 @@ b {
   z-index: 2;
 }
 
-.title {
-  top: 50vh;
-  left: 50vw;
+.title-container {
+  position: absolute;
 
-  height: 160px;
-  width: 500px;
-  clip-path: inset(19px 202px 0px 0px);
+  height: 100vh;
+  width: 100vw;
 
   background-color: #000000;
-
   z-index: 2;
+
+  overflow: hidden;
+  white-space: nowrap;
 }
 
-.first-name {
+@keyframes leftClipPathAnimation {
+  0% {
+    clip-path: inset(0vh 50vw 0vh 0vw);
+  }
+  100% {
+    clip-path: inset(0vh 50vw 100vh 0vw);
+  }
+}
+
+@keyframes rightClipPathAnimation {
+  0% {
+    clip-path: inset(0vh 0vw 100vh 50vw);
+  }
+  100% {
+    clip-path: inset(0vh 0vw 0vh 50vw);
+  }
+}
+
+.title-container:has(.LHS) {
+  animation: leftClipPathAnimation 1s ease-in-out forwards;
+}
+
+.title-container:has(.RHS) {
+  animation: rightClipPathAnimation 1s ease-in-out forwards;
+}
+
+.title {
   position: absolute;
   top: 50vh;
   left: 50vw;
-  transform: translate(calc(-50% + 90px), calc(-50% - 130px));
 }
 
-.first-name::after {
-  content: "@monoclonalAb";
-  font-size: 10px;
-
-  position: absolute;
-  height: 240%;
-  width: 105%;
-  bottom: -138%;
-  left: 0%;
-
-  border-top: 5px solid #ff3000;
-  border-right: 5px solid #ff3000;
+.LHS {
+  transform: translate(calc(-100%), calc(-50%));
+  text-align: right;
 }
 
-.last-name {
-  position: absolute;
-  top: 50vh;
-  left: 50vw;
-  transform: translate(calc(-50% - 10px), calc(-50% - 50px));
-  /* transform: translate(125px, -20px); */
-  direction: rtl;
-}
-
-.last-name::after {
-  content: "";
-  font-size: 10px;
-
-  position: absolute;
-  height: 20%;
-  left: -25%;
-  width: 120%;
-  bottom: -18%;
-
-  border-bottom: 5px solid #ff3000;
+.RHS {
+  transform: translate(calc(0%), calc(-50%));
 }
 
 .inverse,
@@ -107,23 +131,8 @@ b {
   color: #ff3000;
 }
 
-.title h2 {
-  text-align: right;
-
-  font-size: 12pt;
-  font-family: "Helvetica";
-}
-
-.github {
-  position: absolute;
-  bottom: 100%;
-
-  color: black;
-}
-
 .items {
   position: relative;
-  /* top: 100px; */
 }
 
 .items li {
@@ -132,7 +141,7 @@ b {
 .items li + li:before {
   font-family: "Eiko Bold";
   content: "\00a0/\00a0";
-  font-size: 20px;
+  font-size: 1rem;
 }
 .items li a {
   font-family: "Eiko";
@@ -141,6 +150,15 @@ b {
   text-decoration: none;
 }
 .items li a:hover {
+  color: #374151;
+}
+
+h1 a {
+  color: inherit;
+  text-decoration: none;
+}
+
+h1 a:hover {
   color: #374151;
 }
 
