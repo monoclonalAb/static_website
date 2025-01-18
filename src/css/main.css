@@ -62,8 +62,15 @@ cite {
 }
 
 p a,
-dt a,
-dd a {
+h1 a,
+h2 a,
+h3 a,
+h4 a,
+h5 a,
+h6 a,
+dl a,
+ol a,
+ul a {
   color: #1c2129;
   font-style: italic;
 }
@@ -86,7 +93,7 @@ a.underline-animation::after {
   position: absolute;
   width: 100%;
   transform: scaleX(0) translateY(4px);
-  height: 5px;
+  height: 2px;
   bottom: 0;
   left: 0;
   background-color: #ff3000;

@@ -83,6 +83,9 @@ h1 {
 
 @keyframes leftClipPathAnimation {
   0% {
+    clip-path: inset(0vh 50vw 100vh 0vw);
+  }
+  50% {
     clip-path: inset(0vh 50vw 0vh 0vw);
   }
   100% {
@@ -100,7 +103,7 @@ h1 {
 }
 
 .title-container:has(.LHS) {
-  animation: leftClipPathAnimation 1s ease-in-out forwards;
+  animation: leftClipPathAnimation 2s ease-in-out forwards;
 }
 
 .title-container:has(.RHS) {
@@ -131,35 +134,18 @@ h1 {
   color: #ff3000;
 }
 
-.items {
-  position: relative;
-}
-
-.items li {
-  display: inline;
-}
-.items li + li:before {
-  font-family: "Eiko Bold";
-  content: "\00a0/\00a0";
-  font-size: 1rem;
-}
-.items li a {
-  font-family: "Eiko";
-  color: black;
-  font-style: normal;
-  text-decoration: none;
-}
-.items li a:hover {
-  color: #374151;
-}
-
 h1 a {
   color: inherit;
+  font-style: normal !important;
   text-decoration: none;
 }
 
 h1 a:hover {
   color: #374151;
+}
+
+.underline-animation a::after {
+  height: 5px;
 }
 
 ::selection {

@@ -11,6 +11,86 @@
   src: url("../fonts/eiko/PPEiko-Heavy.otf") format("opentype");
 }
 
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .logo > h1 > a {
+    font-size: 1rem;
+  }
+  nav li {
+    font-size: 0.7rem;
+  }
+  nav li + li::before {
+    font-size: 1rem;
+  }
+  .socials > a > img {
+    width: 1rem;
+    height: 1rem;
+  }
+  .socials {
+    column-gap: 0.2rem;
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  .logo > h1 > a {
+    font-size: 2rem;
+  }
+  nav li {
+    font-size: 1rem;
+  }
+  nav li + li::before {
+    font-size: 1.2rem;
+  }
+  .socials > a > img {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+  .socials {
+    column-gap: 0.4rem;
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  .logo > h1 > a {
+    font-size: 2rem;
+  }
+  nav li {
+    font-size: 1rem;
+  }
+  nav li + li::before {
+    font-size: 1.2rem;
+  }
+  .socials > a > img {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+  .socials {
+    column-gap: 0.4rem;
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  .logo > h1 > a {
+    font-size: 2rem;
+  }
+  nav li {
+    font-size: 1rem;
+  }
+  nav li + li::before {
+    font-size: 1.2rem;
+  }
+  .socials > a > img {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+  .socials {
+    column-gap: 0.4rem;
+  }
+}
+
 nav {
   width: 100vw;
   /* display: flex; */
@@ -31,7 +111,6 @@ nav {
   font-family: "Helvetica";
   color: #000000;
   text-align: left;
-  font-size: 15pt;
   padding: 5px;
   text-decoration: none;
 }
@@ -47,13 +126,11 @@ nav ul {
 
 nav li {
   display: inline;
-  font-size: 12px;
 }
 
 nav li + li::before {
   font-family: "Eiko";
   content: "\00a0~\00a0\00a0";
-  font-size: 20px;
 }
 
 nav,
@@ -61,7 +138,7 @@ nav a {
   font-family: "Eiko";
   color: black;
   text-decoration: none;
-  font-style: normal;
+  font-style: normal !important;
 }
 
 nav a:hover {
@@ -77,16 +154,10 @@ nav a:hover img {
   display: flex;
   flex-direction: row;
   align-items: end;
-  column-gap: 10px;
   padding: 5px;
   align-content: end;
 }
 
 .socials > a {
   text-decoration: none;
-}
-
-.socials > a > img {
-  width: 15px;
-  height: 15px;
 }
