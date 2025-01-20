@@ -12,35 +12,41 @@
 }
 
 /* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 600px) {
+@media only screen and ((max-width: 600px)) {
   h1 {
     font-size: 2rem;
   }
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (min-width: 600px) {
+@media only screen and ((min-width: 600px) and (min-height: 480px)) {
   h1 {
     font-size: 3rem;
   }
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (min-width: 768px) {
+@media only screen and ((min-width: 768px) and (min-height: 600px)) {
   h1 {
     font-size: 4rem;
   }
 }
 
 /* Large devices (laptops/desktops, 992px and up) */
-@media only screen and (min-width: 992px) {
+@media only screen and ((min-width: 992px) and (min-height: 768px)) {
+  h1 {
+    font-size: 5rem;
+  }
+}
+
+@media only screen and ((min-width: 1200px) and (min-height: 992px)) {
   h1 {
     font-size: 6rem;
   }
 }
 
 html,
-body {
+bdy {
   overflow: hidden;
 }
 
