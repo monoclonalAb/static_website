@@ -7,7 +7,7 @@ dest=public/blog
 mkdir -p $dest
 
 # temporary file stores the titles and dates
-touch $dir/titles_dates.tmp
+touch $dir/titles_dates.tmp.html
 
 # get YAML front-matter and convert it to bash variables
 # the genius behind converting YAML front-matter to bash variables
@@ -23,23 +23,22 @@ for subdir in $(find $dir -type d -not -path "$dir"); do
   file="$subdir/${dir_name#*_}.md"
 
   # load frontmatter
-  pandoc -s $file -o $file.tmp --template=$dir/frontmatter.bash
-  source $file.tmp
-  echo "$doc_date;$doc_title;$file" >> $dir/titles_dates.tmp
+  pandoc -s $file -o $file.tmp.html --template=$dir/frontmatter.bash --mathml
+  source $file.tmp.html
+  echo "$doc_date;$doc_title;$file" >> $dir/titles_dates.tmp.html
 
   # compile file
   pretty_date=$(echo $doc_date | xargs date +'%B %d, %Y' -d)
   output=$(basename ${file%.md}.html)
-  pandoc -s $file -o $dest/$output --template=$dir/article-template.html \
-         --mathml
+  pandoc -s $file -o $dest/$output --template=$dir/article-template.html --mathml
   sed -i "s/<!-- TIME -->/$pretty_date/" $dest/$output
 
   # clear temporary file
-  rm -rf $file.tmp
+  rm -rf $file.tmp.html
 done
 
 # sort posts by date
-sort -r $dir/titles_dates.tmp > $dir/sorted.tmp
+sort -r $dir/titles_dates.tmp.html > $dir/sorted.tmp.html
 
 # generate index page
 while IFS= read line; do
@@ -52,7 +51,7 @@ while IFS= read line; do
   pattern="<!-- CONTENT -->"
   replace="<li>$href <time>$doc_date<\\/time><\\/li>$pattern"
   sed -i "s/$pattern/$replace/g" $dest/../blog.html
-done < $dir/sorted.tmp
+done < $dir/sorted.tmp.html
 
 # clear all temporary files
-rm -rf $dir/*.tmp
+rm -rf $dir/*.tmp.html

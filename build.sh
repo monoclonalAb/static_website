@@ -25,22 +25,17 @@ $dir/leetcode/build.sh
 nav=$dir/parts/nav.html # nav.html file
 # converts all double quotes (") to single quotes (')
 # & remove all new lines to create a temp file ($nav.tmp)
-cat $nav | tr '"' "'" | tr -d '\n' > $nav.tmp
+cat $nav | tr '"' "'" | tr -d '\n' > $nav.tmp.html
 # sed = stream editor, -i = in-place
 # s/ indicates a substitution operation
 # e.g. s/pattern/replacement/flags
 # pattern = \/
 # replacement = \\\/
 # flags = -g (global)
-sed -i 's/\//\\\//g' $nav.tmp
+sed -i 's/\//\\\//g' $nav.tmp.html
 # for every file
 for file in $(find $dest -name "*.html"); do
-    sed -i "s/<!-- NAV -->/$(cat $nav.tmp)/g" $file
+    sed -i "s/<!-- NAV -->/$(cat $nav.tmp.html)/g" $file
 done
-rm $nav.tmp
+rm $nav.tmp.html
 
-# some Github pages, Keybase, etc. stuff
-# cp = copies files from e.g. .well-known to $dest
-# cp -R .well-known $dest
-# cp CNAME $dest
-# cp _config.yml $dest

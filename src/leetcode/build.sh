@@ -7,7 +7,7 @@ dest=public/leetcode
 mkdir -p $dest
 
 # temporary file stores the titles and dates
-touch $dir/question_data.tmp
+touch $dir/question_data.tmp.html
 
 # get YAML front-matter and convert it to bash variables
 # the genius behind converting YAML front-matter to bash variables
@@ -23,29 +23,27 @@ for year in $(find $dir -type d -not -path "$dir"); do
       file=$day/${formatted_date}.md
 
       # load frontmatter
-      pandoc -s $file -o $file.tmp --template=$dir/frontmatter.bash
-      source $file.tmp
-      echo "$formatted_date;$daily_title;$daily_question_id;$daily_question_link;$daily_difficulty" >> $dir/question_data.tmp
+      pandoc -s $file -o $file.tmp.html --template=$dir/frontmatter.bash --mathml
+      source $file.tmp.html
+      echo "$formatted_date;$daily_title;$daily_question_id;$daily_question_link;$daily_difficulty" >> $dir/question_data.tmp.html
       
       # compile file
       output=$(basename ${file%.md}.html)
-      pandoc -s $file -o $dest/$output --template=$dir/daily-template.html \
-             --mathml
+      pandoc -s $file -o $dest/$output --template=$dir/daily-template.html --mathml
       sed -i "s/<!-- TIME -->/$formatted_date/" $dest/$output
 
       # clear temporary file
-      rm -rf $file.tmp
+      rm -rf $file.tmp.html
     done
   done
 done
 
 
 # sort posts by date
-sort -r $dir/question_data.tmp > $dir/sorted.tmp
+sort -r $dir/question_data.tmp.html > $dir/sorted.tmp.html
 
 # generate index page
 while IFS= read line; do
-  echo $line
   daily_date=$(echo $line | cut -d ';' -f1 )
   daily_title=$(echo $line | cut -d ';' -f2)
   formatted_daily_title=$(echo "$daily_title" | sed 's/-/ /g')
@@ -57,7 +55,7 @@ while IFS= read line; do
   pattern="<!-- CONTENT -->"
   replace="<li>$href <time>$daily_date<\\/time><\\/li>$pattern"
   sed -i "s/$pattern/$replace/g" $dest/../leetcode.html
-done < $dir/sorted.tmp
+done < $dir/sorted.tmp.html
 
 # clear all temporary files
-rm -rf $dir/*.tmp
+rm -rf $dir/*.tmp.html
