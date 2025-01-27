@@ -4,8 +4,10 @@ site:
 clean:
 	rm -rf public && mkdir -p public
 
+
+DEFAULT_DATE := $(shell date -u +'%Y/%m/%d')
 daily:
-	./src/leetcode/daily.sh
+	./src/leetcode/daily.sh $(if $(DATE),$(DATE),$(DEFAULT_DATE))
 
 # python3 -m http.server = starts HTTP servier using Python 3
 # 4000 = port 4000
