@@ -22,6 +22,7 @@ $dir/blog/build.sh
 $dir/leetcode/build.sh
 
 # replace <!-- NAV --> with src/parts/nav.html
+echo "BUILDING: navbar"
 nav=$dir/parts/nav.html # nav.html file
 # converts all double quotes (") to single quotes (')
 # & remove all new lines to create a temp file ($nav.tmp)

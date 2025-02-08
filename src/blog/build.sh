@@ -1,4 +1,5 @@
 #!/bin/bash
+echo "BUILDING: blog.html"
 
 # magic variables (run from the main directory)
 dir=src/blog
@@ -54,15 +55,16 @@ table="<div class=\"table\">$pattern"
 # initialize the table
 sed -i "s/$pattern/$table/g" $dest/../blog.html
 
-# generate index page
+# generate blog index page
+echo "GENERATING: blog posts"
 while IFS= read line; do
-  echo $line
   doc_date=$(echo $line | cut -d ';' -f 1)
   doc_title=$(echo $line | cut -d ';' -f 2)
   # in the format Month date, Year e.g. January 09, 2025
   reformatted_doc_date=$(echo $doc_date | xargs date +'%B %d, %Y' -d)
   doc_file=$(echo $line | cut -d ';' -f 3)
   doc_link=${doc_file%.md}.html
+  echo "$doc_date: $doc_title"
 
   href="<a href=\"blog\\/$(basename $doc_link)\">$doc_title<span>.<\\/span><\\/a>"
   if [[ $bit == 0 ]]; then

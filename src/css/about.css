@@ -78,6 +78,7 @@ difficulty {
   border-radius: 5px;
   white-space: pre-wrap;
   font-family: "Eiko";
+  padding: 0.25rem;
 }
 
 difficulty.Easy {

@@ -1,4 +1,5 @@
 #!/bin/bash
+echo "BUILDING: leetcode.html"
 
 # magic variables (run from the main directory)
 dir=src/leetcode
@@ -55,6 +56,7 @@ closing_tag="<\\/div>$pattern"
 # generate index page
 # '-d' (delimeter)
 # '-f' (field numbex, starting index = 1)
+echo "GENERATING: every leetcode-daily page (by month)"
 while IFS= read line; do
   daily_date=$(echo $line | cut -d ';' -f 1 )
   # all the spaces in `daily_title` are equal to `-`
@@ -78,6 +80,7 @@ while IFS= read line; do
 
     month_year=$(echo $daily_date | xargs date +'%B %Y' -d)
     header="<br><h2>$month_year<span>:<\\/span><\\/h2>"
+    echo "- created $month_year"
     table="<div class=\"table\">$pattern"
     sed -i "s/$pattern/$header$table/g" $dest/../leetcode.html
   fi
