@@ -37,6 +37,18 @@
   src: url("../fonts/baskerville/LibreBaskerville-Italic.ttf")
     format("truetype");
 }
+@font-face {
+  font-family: "Eiko";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/eiko/PPEiko-Medium.otf") format("opentype");
+}
+@font-face {
+  font-family: "Eiko Bold";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/eiko/PPEiko-Heavy.otf") format("opentype");
+}
 
 * {
   margin: 0;
@@ -61,24 +73,14 @@ cite {
   font-style: italic;
 }
 
-p a,
-h1 a,
-h2 a,
-h3 a,
-h4 a,
-h5 a,
-h6 a,
-dl a,
-ol a,
-ul a {
+a {
   color: #1c2129;
-  font-style: italic;
+  /* font-style: italic; */
+  text-decoration: none;
 }
 
-p a:hover,
-dt a:hover,
-dd a:hover {
-  color: #374151;
+a:hover {
+  color: #ff3000;
 }
 
 .underline-animation a,
@@ -108,6 +110,7 @@ a.underline-animation:hover::after {
 
 h1,
 h2 {
+  font-family: "Eiko";
   color: black;
 }
 

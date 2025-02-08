@@ -74,6 +74,40 @@ h1 {
 difficulty {
   text-align: right;
   direction: ltr;
+  border: none;
+  border-radius: 5px;
+  white-space: pre-wrap;
+  font-family: "Eiko";
+}
+
+difficulty.Easy {
+  color: #1cb8b8;
+  background-color: #1cb8b822;
+}
+
+.row.Easy {
+  border-left: 3px solid #1cb8b8;
+  border-radius: 0px;
+}
+
+difficulty.Medium {
+  color: #ffb800;
+  background-color: #ffb80022;
+}
+
+.row.Medium {
+  border-left: 3px solid #ffb800;
+  border-radius: 0px;
+}
+
+difficulty.Hard {
+  color: #f63636;
+  background-color: #f6363622;
+}
+
+.row.Hard {
+  border-left: 3px solid #f63636;
+  border-radius: 0px;
 }
 
 .paragraph {
@@ -130,6 +164,34 @@ ol {
 .footnotes > ol > li {
   margin-top: 10px;
   margin-bottom: 10px;
+}
+
+.table {
+  width: 100%;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+
+  align-items: center;
+  padding-top: 11px;
+  padding-bottom: 11px;
+}
+
+.row > * {
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  padding: 0.25rem;
+}
+
+.row > a {
+  flex-basis: 68%;
+}
+
+.row.dark {
+  background-color: #f7f8fa;
 }
 
 /** mathml styling **/

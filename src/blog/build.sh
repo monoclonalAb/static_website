@@ -40,18 +40,41 @@ done
 # sort posts by date
 sort -r $dir/titles_dates.tmp.html > $dir/sorted.tmp.html
 
+# to keep track of sub-headings
+previous_date="2000-01-01"
+
+# for alternating background-colours:
+bit=0
+
+# constant strings
+pattern="<!-- CONTENT -->"
+closing_tag="<\\/div>$pattern"
+table="<div class=\"table\">$pattern"
+
+# initialize the table
+sed -i "s/$pattern/$table/g" $dest/../blog.html
+
 # generate index page
 while IFS= read line; do
-  doc_title=$(echo $line | cut -d ';' -f2)
-  doc_date=$(echo $line | cut -d ';' -f1 | xargs date +'%B %d, %Y' -d)
-  doc_file=$(echo $line | cut -d ';' -f3)
+  echo $line
+  doc_date=$(echo $line | cut -d ';' -f 1)
+  doc_title=$(echo $line | cut -d ';' -f 2)
+  # in the format Month date, Year e.g. January 09, 2025
+  reformatted_doc_date=$(echo $doc_date | xargs date +'%B %d, %Y' -d)
+  doc_file=$(echo $line | cut -d ';' -f 3)
   doc_link=${doc_file%.md}.html
 
-  href="<a href='blog\\/$(basename $doc_link)'>$doc_title<\\/a>"
-  pattern="<!-- CONTENT -->"
-  replace="<li>$href <time>$doc_date<\\/time><\\/li>$pattern"
+  href="<a href=\"blog\\/$(basename $doc_link)\">$doc_title<span>.<\\/span><\\/a>"
+  if [[ $bit == 0 ]]; then
+    class="row sidebar"
+  else
+    class="row dark"
+  fi
+  replace="<div class=\"$class\">$href <time>$reformatted_doc_date<\\/time><\\/div>$pattern"
   sed -i "s/$pattern/$replace/g" $dest/../blog.html
+  bit=$(($bit ^ 1))
 done < $dir/sorted.tmp.html
+sed -i "s/$pattern/$closing_tag/g" $dest/../blog.html
 
 # clear all temporary files
 rm -rf $dir/*.tmp.html

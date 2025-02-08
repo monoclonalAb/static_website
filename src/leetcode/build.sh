@@ -42,20 +42,58 @@ done
 # sort posts by date
 sort -r $dir/question_data.tmp.html > $dir/sorted.tmp.html
 
-# generate index page
-while IFS= read line; do
-  daily_date=$(echo $line | cut -d ';' -f1 )
-  daily_title=$(echo $line | cut -d ';' -f2)
-  formatted_daily_title=$(echo "$daily_title" | sed 's/-/ /g')
-  daily_question_id=$(echo $line | cut -d ';' -f3)
-  daily_question_link=$(echo $line | cut -d ';' -f4)
-  daily_difficulty=$(echo $line | cut -d ';' -f5)
+# to keep track of sub-headings
+previous_date="2000-01-01"
 
-  href="<a href='leetcode\\/${daily_date}.html'>$formatted_daily_title<\\/a>"
-  pattern="<!-- CONTENT -->"
-  replace="<li>$href <time>$daily_date<\\/time><\\/li>$pattern"
+# for alternating background-colours:
+bit=0
+
+# constant strings
+pattern="<!-- CONTENT -->"
+closing_tag="<\\/div>$pattern"
+
+# generate index page
+# '-d' (delimeter)
+# '-f' (field numbex, starting index = 1)
+while IFS= read line; do
+  daily_date=$(echo $line | cut -d ';' -f 1 )
+  # all the spaces in `daily_title` are equal to `-`
+  daily_title=$(echo $line | cut -d ';' -f 2) 
+  # `formatted_daily_title` aims to replace all `-` with ` `
+  formatted_daily_title=$(echo $daily_title | sed 's/-/ /g')
+  daily_question_id=$(echo $line | cut -d ';' -f 3)
+  daily_question_link=$(echo $line | cut -d ';' -f 4)
+  daily_difficulty=$(echo $line | cut -d ';' -f 5)
+
+  # check what previous month is; if different, create new heading and div
+  if [[ $(echo "$previous_date" | cut -d '-' -f 1-2) != $(echo $daily_date | cut -d '-' -f 1-2) ]]; then
+    # adding closing tags to each table (for each month)
+    if [[  $previous_date != "2000-01-01"  ]]; then
+        bit=0
+        sed -i "s/$pattern/$closing_tag/g" $dest/../leetcode.html
+    fi
+    
+    # update the previous date
+    previous_date=$daily_date
+
+    month_year=$(echo $daily_date | xargs date +'%B %Y' -d)
+    header="<br><h2>$month_year<span>:<\\/span><\\/h2>"
+    table="<div class=\"table\">$pattern"
+    sed -i "s/$pattern/$header$table/g" $dest/../leetcode.html
+  fi
+
+
+  href="<a href=\"leetcode\\/${daily_date}.html\"><b>$daily_question_id<\\/b><span>.<\\/span> $formatted_daily_title<\\/a>"
+  if [[ $bit == 0 ]]; then
+    class="row"
+  else
+    class="row dark"
+  fi
+  replace="<div class=\"$class $daily_difficulty\">$href <time>$daily_date<\\/time> <difficulty class=\"$daily_difficulty\">$daily_difficulty<\\/difficulty><\\/div>$pattern"
   sed -i "s/$pattern/$replace/g" $dest/../leetcode.html
+  bit=$(($bit ^ 1))
 done < $dir/sorted.tmp.html
+sed -i "s/$pattern/$closing_tag/g" $dest/../leetcode.html
 
 # clear all temporary files
 rm -rf $dir/*.tmp.html

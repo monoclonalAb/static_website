@@ -25,7 +25,7 @@ $dir/leetcode/build.sh
 nav=$dir/parts/nav.html # nav.html file
 # converts all double quotes (") to single quotes (')
 # & remove all new lines to create a temp file ($nav.tmp)
-cat $nav | tr '"' "'" | tr -d '\n' > $nav.tmp.html
+cat $nav | tr '"' "\\\"" | tr -d '\n' > $nav.tmp.html
 # sed = stream editor, -i = in-place
 # s/ indicates a substitution operation
 # e.g. s/pattern/replacement/flags

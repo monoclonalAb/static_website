@@ -1,16 +1,3 @@
-@font-face {
-  font-family: "Eiko";
-  font-style: normal;
-  font-weight: 400;
-  src: url("../fonts/eiko/PPEiko-Medium.otf") format("opentype");
-}
-@font-face {
-  font-family: "Eiko Bold";
-  font-style: normal;
-  font-weight: 400;
-  src: url("../fonts/eiko/PPEiko-Heavy.otf") format("opentype");
-}
-
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
   .logo > h1 > a {
