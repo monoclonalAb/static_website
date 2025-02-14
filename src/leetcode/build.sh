@@ -1,4 +1,5 @@
 #!/bin/bash
+
 echo "BUILDING: leetcode.html"
 
 # magic variables (run from the main directory)
