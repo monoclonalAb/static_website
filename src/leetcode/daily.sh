@@ -46,7 +46,7 @@ if [ ! -e "$dir/$DATE/${DATE//\//-}.md" ]; then
     question_id=$(grep -oP '"question_id":\s*"\K[^"]+' $dir/daily.json)
     question_link=$(grep -oP '"link":\s*"\K[^"]+' $dir/daily.json)
     difficulty=$(grep -oP '"difficulty":\s*"\K[^"]+' $dir/daily.json)
-    echo -e "---\ntitle: \"$formatted_title\"\nquestion_id: \"$question_id\"\nquestion_link: \"$question_link\"\ndifficulty: \"$difficulty\"\n---\n\n## Code<span>:</span>\n\n\`\`\`{.cpp}\n\n\`\`\`\n\n### Complexity<span>:</span>\n\n:::sidebar\n- Time:\n- Space:\n:::\n\n### EEE (Eric's Enlightening Experiences)<span>:</span>\n\n:::sidebar\n\n:::\n\n### TTT (Time Taken Today)<span>:</span>\n\n:::sidebar\n\n:::$q" > $dir/${DATE}/${DATE//\//-}.md
+    echo -e "---\ntitle: \"$formatted_title\"\nquestion_id: \"$question_id\"\nquestion_link: \"$question_link\"\ndifficulty: \"$difficulty\"\n---\n\n## Code<span>:</span>\n\n\`\`\`{.cpp}\n\n\`\`\`\n\n### Complexity<span>:</span>\n\n:::sidebar\n- Time:\n- Space:\n:::\n\n### Learnings<span>?</span>\n\n:::sidebar\n\n:::\n\n### Time Taken<span>?</span>\n\n:::sidebar\n\n:::$q" > $dir/${DATE}/${DATE//\//-}.md
 else
     echo 'Markdown file exists for: '$DATE
 fi
