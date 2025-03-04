@@ -199,7 +199,7 @@ Therefore, to solve this question, we can place all the `3 * n` numbers into a `
 Then, we should iterate through the `[key, value]` pairs in `map` in order from smallest to highest:
 
 :::sidebar
-- for every `key`, check what `value % 0` is:
+- for every `key`, check what `value % 3` is:
     - if it is `== 0`, iterate to the next `key`
     - if it is `> 0`, subtract `value % 3` from `key+1` and `key+2`
     - if it is `< 0`, then we know that it is impossible to group, and can display *Impossible*
