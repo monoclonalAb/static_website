@@ -50,6 +50,16 @@
   src: url("../fonts/eiko/PPEiko-Heavy.otf") format("opentype");
 }
 
+/* global variables */
+:root {
+  --black: #161616;
+  --color: #1c2129;
+  --dark-gray: #374151;
+  --gray: #666666;
+  --white: #eff1f5;
+  --red: #ff4939;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -58,8 +68,9 @@ html,
 body {
   height: 100vh;
   width: 100vw;
-  color: #374151;
+  color: var(--dark-gray);
   font-family: "Helvetica", serif;
+  background-color: var(--white);
 }
 ::selection {
   /* consider changing based on light or dark tag on <body> */
@@ -75,12 +86,14 @@ cite {
 
 a {
   color: #1c2129;
+  target: "_blank";
   /* font-style: italic; */
-  text-decoration: none;
+  /* text-decoration: none; */
 }
 
 a:hover {
-  color: #ff3000;
+  color: var(--red);
+  font-style: italic;
 }
 
 .underline-animation a,
@@ -98,7 +111,7 @@ a.underline-animation::after {
   height: 2px;
   bottom: 0;
   left: 0;
-  background-color: #ff3000;
+  background-color: var(--red);
   transition: transform 0.25s ease-out;
   transform-origin: bottom center;
 }
@@ -108,31 +121,46 @@ a.underline-animation:hover::after {
   transform: scaleX(1) translateY(4px);
 }
 
+p {
+  line-height: normal;
+}
+
 h1,
 h2 {
   font-family: "Eiko";
-  color: black;
+  color: var(--black);
 }
 
 h1 > span,
 h2 > span,
 h3 > span,
-h4 > span {
-  color: #ff3000;
+h4 > span,
+h5 > span,
+h6 > span {
+  color: var(--red);
+}
+
+sup {
+  vertical-align: top;
+}
+
+sub {
+  vertical-align: bot;
 }
 
 .sidebar {
-  border-left: 3px solid #ff3000;
+  border-left: 3px solid var(--red);
   border-radius: 0px;
   row-gap: 10px;
 }
 
-.sidebar:not(ol):not(ul):not(:has(ol)):not(:has(ul)) {
+/* indent as long as there is no 'list' or `.row`*/
+.sidebar:not(.row):not(:has(row)):not(ol):not(:has(ol)):not(ul):not(:has(ul)) {
   padding-left: 15px;
 }
 
 time {
-  color: gray;
+  color: var(--gray);
   font-style: italic;
   font-family: "Baskerville";
   font-size: 75%;
@@ -141,7 +169,7 @@ time {
 
 /* extra styling points! */
 .code {
-  color: black;
+  color: var(--black);
   font-family: monospace;
   background-color: #cee1ff;
   border-radius: 2px;

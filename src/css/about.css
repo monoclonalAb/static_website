@@ -61,6 +61,8 @@ figure img {
 figure figcaption,
 figure figcaption a {
   color: gray;
+  font-family: "Eiko";
+  /* font-style: italic; */
 }
 
 h1 {
@@ -71,10 +73,35 @@ h1 {
   text-decoration: none;
 }
 
+.table {
+  width: 100%;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+
+  align-items: center;
+  padding-top: 11px;
+  padding-bottom: 11px;
+}
+
+.row > * {
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  padding: 0.25rem;
+}
+
+.row > a {
+  flex-grow: 1;
+}
+
+.row.dark {
+  background-color: #f7f8fa;
+}
+
 difficulty {
-  text-align: right;
-  direction: ltr;
-  border: none;
   border-radius: 5px;
   white-space: pre-wrap;
   font-family: "Eiko";
@@ -84,6 +111,9 @@ difficulty {
 difficulty.Easy {
   color: #1cb8b8;
   background-color: #1cb8b822;
+  margin-left: calc(
+    0.5rem + 26.4833px
+  ); /* difference between width of "Medium" and "Easy" */
 }
 
 .row.Easy {
@@ -104,6 +134,9 @@ difficulty.Medium {
 difficulty.Hard {
   color: #f63636;
   background-color: #f6363622;
+  margin-left: calc(
+    0.5rem + 24.8px
+  ); /* difference between width of "Medium" and "Hard" */
 }
 
 .row.Hard {
@@ -165,34 +198,6 @@ ol {
 .footnotes > ol > li {
   margin-top: 10px;
   margin-bottom: 10px;
-}
-
-.table {
-  width: 100%;
-}
-
-.row {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-
-  align-items: center;
-  padding-top: 11px;
-  padding-bottom: 11px;
-}
-
-.row > * {
-  margin-left: 0.5rem;
-  margin-right: 0.5rem;
-  padding: 0.25rem;
-}
-
-.row > a {
-  flex-basis: 68%;
-}
-
-.row.dark {
-  background-color: #f7f8fa;
 }
 
 /** mathml styling **/

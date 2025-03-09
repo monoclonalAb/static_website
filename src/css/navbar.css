@@ -96,14 +96,14 @@ nav {
 
 .logo > h1 > a {
   font-family: "Helvetica";
-  color: #000000;
+  color: var(--black);
   text-align: left;
   padding: 5px;
   text-decoration: none;
 }
 
 .logo > h1 > a > span {
-  color: #ff3000;
+  color: var(--red);
 }
 
 nav ul {
@@ -123,13 +123,13 @@ nav li + li::before {
 nav,
 nav a {
   font-family: "Eiko";
-  color: black;
+  color: var(--black);
   text-decoration: none;
   font-style: normal !important;
 }
 
 nav a:hover {
-  color: #374151;
+  color: var(--dark-gray);
 }
 
 nav a:hover img {

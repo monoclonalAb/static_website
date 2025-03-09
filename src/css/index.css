@@ -55,7 +55,7 @@ body {
 }
 
 h1 {
-  color: white;
+  color: var(--white);
   font-family: "Helvetica";
 }
 
@@ -71,6 +71,7 @@ h1 {
   justify-content: center;
   align-items: center;
 
+  background-color: var(--white);
   z-index: 2;
 }
 
@@ -80,7 +81,7 @@ h1 {
   height: 100vh;
   width: 100vw;
 
-  background-color: #000000;
+  background-color: var(--black);
   z-index: 2;
 
   overflow: hidden;
@@ -89,15 +90,15 @@ h1 {
 
 @keyframes leftClipPathAnimation {
   0% {
-    color: white;
+    color: var(--white);
     clip-path: inset(0vh calc(50vw - 1px) 100vh 0vw);
   }
   50% {
-    color: white;
+    color: var(--white);
     clip-path: inset(0vh calc(50vw - 1px) 0vh 0vw);
   }
   100% {
-    color: white;
+    color: var(--white);
     clip-path: inset(0vh calc(50vw - 1px) 100vh 0vw);
   }
 }
@@ -135,15 +136,15 @@ h1 {
 }
 
 .inverse {
-  color: #000000;
+  color: var(--black);
 }
 
 .inverse.LHS {
-  color: #ff3000;
+  color: var(--red);
 }
 
 .title h1 > span {
-  color: #ff3000;
+  color: var(--red);
 }
 
 h1 a {
@@ -153,7 +154,7 @@ h1 a {
 }
 
 h1 a:hover {
-  color: #374151;
+  color: var(--gray);
 }
 
 .underline-animation a::after {

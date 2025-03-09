@@ -9,7 +9,7 @@ As 2025 begins (after what I perceive to be a not-so-good finals week) and peopl
 I decided it would be an <i>optimal</i> use of my time to understand the premise of Group Theory.
 More explicitly, I am just here to answer the question
 "what is Group Theory and why is it so useful?",
-since, even after completing [Maths 320](https://courseoutline.auckland.ac.nz/dco/course/MATHS/320/1245),
+since, even after completing [Maths 320](https://courseoutline.auckland.ac.nz/dco/course/MATHS/320/1245){target="_blank"},
 I still struggle to explain real-world applications of this topic and its importance in Mathematics.
 
 This is a big, big problem as I am the (self-imposed) "#1" group-theory "fan"
@@ -22,7 +22,7 @@ coming up with some legible argument as to why group-theory is the greatest of a
 A quick browse of any basic definition of 'group theory' will most likely net you two possible explanations:
 
 ::: sidebar
-- the [wikipedia](https://en.wikipedia.org/wiki/Group_theory) one stating that it is just the **study of groups** (super insightful really)
+- the [wikipedia](https://en.wikipedia.org/wiki/Group_theory){target="_blank"} one stating that it is just the **study of groups** (super insightful really)
 - the slightly more-descriptive-yet-still-not-so-descriptive one stating that it is the **study of symmetry**
 :::
 
@@ -66,7 +66,7 @@ To put it simply, Groups are just an **abstraction** of symmetry.
 
 #### and, what does that mean exactly?
 
-The definition of "abstraction" that [Wikipedia](https://en.wikipedia.org/wiki/Abstraction_(mathematics)) supplies is that:
+The definition of "abstraction" that [Wikipedia](https://en.wikipedia.org/wiki/Abstraction_(mathematics)){target="_blank"} supplies is that:
 
 ::: important
 ### Abstraction<span>:</span>
@@ -150,27 +150,27 @@ Clearly, the identity element is just its solved state (proving identity),
 concatenating any position (or move sequence) together with another just results in another valid position (proving closure)
 and as long as the order of the move sequence remains constant, the ending position will remain the same as well (proving associativity).
 
-As a result, there exists a [Rubik's Cube Group](https://en.wikipedia.org/wiki/Rubik%27s_Cube_group) where each element of the Group is a unique position of the cube.
+As a result, there exists a [Rubik's Cube Group](https://en.wikipedia.org/wiki/Rubik%27s_Cube_group){target="_blank"} where each element of the Group is a unique position of the cube.
 
 Understanding the Rubik's Cube Group proved highly valuable, particularly in determining God’s Number. 
-Morwen Thistlethwaite is recognized for his mathematical approach, which used group theory to develop a method capable of solving any 3x3 cube in at most [52 moves](https://www.jaapsch.net/puzzles/thistle.htm).
+Morwen Thistlethwaite is recognized for his mathematical approach, which used group theory to develop a method capable of solving any 3x3 cube in at most [52 moves](https://www.jaapsch.net/puzzles/thistle.htm){target="_blank"}.
 
 In 1981, this was quite an important theoretical break-through as it intends on slowly 
 reducing the cube to subgroups (subsets of the original groups, that satisfies all the conditions of a group) 
 of the original Rubik's Cube group that only contains positions which can be solved without, for example, using quarter turns of the upper and bottom face.
-With the further optimisation of the Thistlewaite Algorithm, and improvement to computing technology, several researchers were able to eventually deduce that [God's Number is 20](https://cube20.org/).
+With the further optimisation of the Thistlewaite Algorithm, and improvement to computing technology, several researchers were able to eventually deduce that [God's Number is 20](https://cube20.org/){target="_blank"}.
 
 #### or the Fifteen Puzzle<span>:</span>
 
 A much simpler example to consider would be the fifteen puzzle.
 
-![Original photo from [here](https://michael.kim/blog/puzzle)](./../images/blog/001_group_theory/15_puzzle_solved.png){.medium_img}
+![Original photo from [here](https://michael.kim/blog/puzzle){target="_blank"}](./../images/blog/001_group_theory/15_puzzle_solved.png){.medium_img}
 
 For those unaware, the fifteen puzzle is a 4x4 sliding puzzle containing tiles ordered from 1 to 15,
 where the goal is to order the tiles into numberical order.
 Whilst it is definitely possible to trivialise the puzzle by splitting the puzzle into sub-problems,
 how would you determine if any provided configuration of the fifteen puzzle is solvable or not?
-We will start by attempting a simpler problem from [Sam Loyd](https://en.wikipedia.org/wiki/Sam_Loyd),
+We will start by attempting a simpler problem from [Sam Loyd](https://en.wikipedia.org/wiki/Sam_Loyd){target="_blank"},
 where he posed a wager for $1000 to anyone that could provide a solution to the fifteen puzzle with the position of 14 and 15 interchanged.
 
 Similar to the Rubik's Cube, we can follow similar steps to show that all possible configurations of the fifteen puzzle can be arranged into a group
@@ -178,7 +178,7 @@ Similar to the Rubik's Cube, we can follow similar steps to show that all possib
 
 However, the one caveat to this approach is that not all movesets can be composed one after each other;
 if you want to compose move B after move A, that is only possible if move A leaves the puzzle where the empty slot is in a legal position for move B to be applied
-(forming a [Groupoid](https://en.wikipedia.org/wiki/Groupoid#Puzzles), instead of a Group).
+(forming a [Groupoid](https://en.wikipedia.org/wiki/Groupoid#Puzzles){target="_blank"}, instead of a Group).
 
 Hence, if we restrict all possible movesets to always leave the empty slot in the bottom right corner, 
 we will find that each position follows the ruleset of a group structure. 
@@ -194,7 +194,7 @@ $$
 \end{equation*}
 $$
 
-![Original photo from [here](https://michael.kim/blog/puzzle)](./../images/blog/001_group_theory/15_puzzle_shuffled.png){.medium_img}
+![Original photo from [here](https://michael.kim/blog/puzzle){target="_blank"}](./../images/blog/001_group_theory/15_puzzle_shuffled.png){.medium_img}
 
 In fact, we can define each permutation using a "two-line notation" with the top line defining the original "slot"
 and the second line to define the tile that is currently occupying the slot. Using the above example, we get:
@@ -273,9 +273,9 @@ is used to represent all the possible permutations possibly performed on $n$ ele
 Intuitively, that implies all the possible permutations of the fifteen puzzle is a subgroup of the finite symmetric group.
 
 In fact, it has been proven that each permutation correlates to a well-known group, $A_{15}$
-(or the [alternating group](https://en.wikipedia.org/wiki/Alternating_group) of degree 15),
+(or the [alternating group](https://en.wikipedia.org/wiki/Alternating_group){target="_blank"} of degree 15),
 which is a finite set that consists of all the even permutations in the corresponding finite symmetric group.
-You can read more about the fifteen puzzle and its relation to the alternating group of degree 15 [here](https://web.archive.org/web/20210107214840/https://faculty.etsu.edu/beelerr/fifteen-supp.pdf).
+You can read more about the fifteen puzzle and its relation to the alternating group of degree 15 [here](https://web.archive.org/web/20210107214840/https://faculty.etsu.edu/beelerr/fifteen-supp.pdf){target="_blank"}.
 
 
 ## In summary<span>:</span>
