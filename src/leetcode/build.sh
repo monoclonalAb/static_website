@@ -17,26 +17,26 @@ touch $dir/question_data.tmp.html
 # Author: https://github.com/cr0sh
 # his blog: https://blog.cro.sh/
 
-for year in $(find $dir -type d -not -path "$dir"); do
-  for month in $(find $year -type d -not -path "$year"); do
-    for day in $(find $month -type d -not -path "$month"); do
-      # basename extracts the name of the directory/file at the end of the path
-      formatted_date=$(echo "$day" | cut -d'/' -f3-5 | tr '/' '-')
-      file=$day/${formatted_date}.md
+for month in $(find $dir -type d -not -path "$dir"); do
+  for file in "$month"/*; do
+    echo $file
+    # # basename extracts the name of the directory/file at the end of the path
+    formatted_date=$(echo "$file" | cut -d '/' -f4 | cut -d '.' -f1)
+    # echo $formatted_date
+    # file=$day/${formatted_date}.md
+    #
+    # load frontmatter
+    pandoc -s $file -o $file.tmp.html --template=$dir/frontmatter.bash --mathml
+    source $file.tmp.html
+    echo "$formatted_date;$daily_title;$daily_question_id;$daily_question_link;$daily_difficulty" >> $dir/question_data.tmp.html
 
-      # load frontmatter
-      pandoc -s $file -o $file.tmp.html --template=$dir/frontmatter.bash --mathml
-      source $file.tmp.html
-      echo "$formatted_date;$daily_title;$daily_question_id;$daily_question_link;$daily_difficulty" >> $dir/question_data.tmp.html
-      
-      # compile file
-      output=$(basename ${file%.md}.html)
-      pandoc -s $file -o $dest/$output --template=$dir/daily-template.html --mathml
-      sed -i "s/<!-- TIME -->/$formatted_date/" $dest/$output
+    # compile file
+    output=$(basename ${file%.md}.html)
+    pandoc -s $file -o $dest/$output --template=$dir/daily-template.html --mathml
+    sed -i "s/<!-- time -->/$formatted_date/" $dest/$output
 
-      # clear temporary file
-      rm -rf $file.tmp.html
-    done
+    # clear temporary file
+    rm -rf $file.tmp.html
   done
 done
 

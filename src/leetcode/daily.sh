@@ -9,15 +9,19 @@ else
     DATE=$1
 fi
 
-mkdir -p $dir/$DATE
+# initialize the folder the daily will be in
+# (the format is %Y-%m e.g. 2025-02)
+folder=$(echo $DATE | cut -d '/' -f 1-2 | sed 's|\/|-|')
 
-echo "$dir/$DATE/${DATE//\//-}.md"
+mkdir -p $dir/$folder
+echo "$dir/$folder/${DATE//\//-}.md"
 
-if [ ! -e "$dir/$DATE/${DATE//\//-}.md" ]; then
+if [ ! -e "$dir/$folder/${DATE//\//-}.md" ]; then
     echo 'Creating new daily markdown'
 
     year=$(echo $DATE | cut -d '/' -f 1)
     month=$(echo $DATE | cut -d '/' -f 2)
+    # remove leading zeros
     month=$(echo $month | sed 's/^0//')
 
     curl -X POST 'https://leetcode.com/graphql' \
@@ -46,7 +50,7 @@ if [ ! -e "$dir/$DATE/${DATE//\//-}.md" ]; then
     question_id=$(grep -oP '"question_id":\s*"\K[^"]+' $dir/daily.json)
     question_link=$(grep -oP '"link":\s*"\K[^"]+' $dir/daily.json)
     difficulty=$(grep -oP '"difficulty":\s*"\K[^"]+' $dir/daily.json)
-    echo -e "---\ntitle: \"$formatted_title\"\nquestion_id: \"$question_id\"\nquestion_link: \"$question_link\"\ndifficulty: \"$difficulty\"\n---\n\n## Code<span>:</span>\n\n\`\`\`{.cpp}\n\n\`\`\`\n\n### Complexity<span>:</span>\n\n:::sidebar\n- Time:\n- Space:\n:::\n\n### Learnings<span>:</span>\n\n:::sidebar\n\n:::\n\n### Time Taken<span>:</span>\n\n:::sidebar\n\n:::$q" > $dir/${DATE}/${DATE//\//-}.md
+    echo -e "---\ntitle: \"$formatted_title\"\nquestion_id: \"$question_id\"\nquestion_link: \"$question_link\"\ndifficulty: \"$difficulty\"\n---\n\n## Code<span>:</span>\n\n\`\`\`{.cpp}\n\n\`\`\`\n\n### Complexity<span>:</span>\n\n:::sidebar\n- Time:\n- Space:\n:::\n\n### Learnings<span>:</span>\n\n:::sidebar\n\n:::\n\n### Time Taken<span>:</span>\n\n:::sidebar\n\n:::$q" > $dir/$folder/${DATE//\//-}.md
 else
     echo 'Markdown file exists for: '$DATE
 fi
