@@ -6,9 +6,9 @@ date: 2025-02-26
 # intro<span>:</span>
 
 The second month may be coming to a close, and a certain individual has **definitely not** been procrastinating his second blog post of the year.
-During this time, I decided to participate in a *competitive programming competition* sponsored by a company beginning with I.
-Unfortunately, however, I believe that I did not have the best showing at this event so *naturally*, 
-I decided it would only be *right* to do a write-up for every question so *mishaps* like this will never happen again.
+During this time, I decided to participate in a *competitive programming competition* sponsored by a certain company beginning with I.
+Unfortunately, however, I believe that I did not have the best showing at this event, 
+so *naturally* I decided it would only be right to do a write-up for every question since practice does make permanent.
 
 ## Problem A<span>:</span> Back to the Futures
 
