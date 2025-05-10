@@ -14,7 +14,7 @@ blog:
 	./src/blog/build.sh
 
 leetcode:
-	rm -rf public/leetcode && ./src/leetcode/build.sh
+	./src/leetcode/build.sh $(if $(DATE),$(DATE),)
 
 # python3 -m http.server = starts HTTP servier using Python 3
 # 4000 = port 4000
