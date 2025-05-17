@@ -73,6 +73,8 @@ h1 {
   text-decoration: none;
 }
 
+/* table styles for blog / leetcode */
+
 .table {
   width: 100%;
 }
@@ -99,49 +101,6 @@ h1 {
 
 .row.dark {
   background-color: #f7f8fa;
-}
-
-difficulty {
-  border-radius: 5px;
-  white-space: pre-wrap;
-  font-family: "Eiko";
-  padding: 0.25rem;
-}
-
-difficulty.Easy {
-  color: #1cb8b8;
-  background-color: #1cb8b822;
-  margin-left: calc(
-    0.5rem + 26.4833px
-  ); /* difference between width of "Medium" and "Easy" */
-}
-
-.row.Easy {
-  border-left: 3px solid #1cb8b8;
-  border-radius: 0px;
-}
-
-difficulty.Medium {
-  color: #ffb800;
-  background-color: #ffb80022;
-}
-
-.row.Medium {
-  border-left: 3px solid #ffb800;
-  border-radius: 0px;
-}
-
-difficulty.Hard {
-  color: #f63636;
-  background-color: #f6363622;
-  margin-left: calc(
-    0.5rem + 24.8px
-  ); /* difference between width of "Medium" and "Hard" */
-}
-
-.row.Hard {
-  border-left: 3px solid #f63636;
-  border-radius: 0px;
 }
 
 .paragraph {

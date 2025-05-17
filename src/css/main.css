@@ -71,6 +71,7 @@ body {
   color: var(--dark-gray);
   font-family: "Helvetica", serif;
   background-color: var(--white);
+  padding-bottom: 10vh;
 }
 ::selection {
   /* consider changing based on light or dark tag on <body> */
@@ -126,7 +127,11 @@ p {
 }
 
 h1,
-h2 {
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: "Eiko";
   color: var(--black);
 }

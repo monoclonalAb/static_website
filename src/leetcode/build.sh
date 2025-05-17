@@ -35,7 +35,7 @@ if [ -z "$1" ]; then
       # compile file
       output=$(basename ${file%.md}.html)
       pandoc -s $file -o $dest/$output --template=$dir/daily-template.html --mathml
-      sed -i "s/<!-- time -->/$formatted_date/" $dest/$output
+      sed -i "s/<!-- TIME -->/$formatted_date/" $dest/$output
 
       # clear temporary file
       rm -rf $file.tmp.html
@@ -123,7 +123,7 @@ else
     # compile file
     output=$(basename ${src_file%.md}.html)
     pandoc -s $src_file -o $dest/$output --template=$dir/daily-template.html --mathml
-    sed -i "s/<!-- time -->/$formatted_date/" $dest/$output
+    sed -i "s/<!-- TIME -->/$formatted_date/" $dest/$output
 
     # clear temporary file
     rm -rf $src_file.tmp.html

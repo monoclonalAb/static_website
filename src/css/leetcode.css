@@ -1,0 +1,48 @@
+difficulty {
+  border-radius: 5px;
+  white-space: pre-wrap;
+  font-family: "Eiko";
+  padding: 0.25rem;
+}
+
+.row.Easy {
+  border-left: 3px solid #1cb8b8;
+  border-radius: 0px;
+}
+
+.row > difficulty.Easy {
+  margin-left: calc(
+    0.5rem + 26.4833px
+  ); /* difference between width of "Medium" and "Easy" */
+}
+
+difficulty.Easy {
+  color: #1cb8b8;
+  background-color: #1cb8b822;
+}
+
+.row.Medium {
+  border-left: 3px solid #ffb800;
+  border-radius: 0px;
+}
+
+difficulty.Medium {
+  color: #ffb800;
+  background-color: #ffb80022;
+}
+
+.row.Hard {
+  border-left: 3px solid #f63636;
+  border-radius: 0px;
+}
+
+.row > difficulty.Hard {
+  margin-left: calc(
+    0.5rem + 24.8px
+  ); /* difference between width of "Medium" and "Hard" */
+}
+
+difficulty.Hard {
+  color: #f63636;
+  background-color: #f6363622;
+}
