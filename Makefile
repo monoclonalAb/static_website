@@ -1,5 +1,5 @@
 site:
-	./build.sh
+	./build.sh $(PAGES)
 
 clean:
 	rm -rf public && mkdir -p public

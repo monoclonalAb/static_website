@@ -110,8 +110,7 @@ h1 {
 }
 
 .important {
-  background-color: rgb(255, 48, 0, 50%);
-  fill-opacity: 50%;
+  background-color: rgb(255, 48, 0, 20%);
   border-left: 3px solid #ff3000;
   border-radius: 0px;
   padding-top: 20px;
