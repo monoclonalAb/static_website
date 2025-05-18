@@ -570,7 +570,7 @@ as long as it does not produce any "observable changes"
 :::
 
 As a result, if *optimisations are not disabled*, 
-modern `c++` compilers are capable evalutating certain expressions during **compile-time** instead of during **runtime**
+modern `c++` compilers are capable of evaluating certain expressions during **compile-time** instead of during **runtime**
 (using the `as-if rule`, this is hence called **compile-time evaluation**):
 
 ::: sidebar
