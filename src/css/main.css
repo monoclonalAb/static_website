@@ -66,12 +66,12 @@
 }
 html,
 body {
-  height: 100vh;
+  height: auto;
   width: 100vw;
   color: var(--dark-gray);
   font-family: "Helvetica", serif;
   background-color: var(--white);
-  padding-bottom: 10vh;
+  padding-bottom: 4vh;
 }
 ::selection {
   /* consider changing based on light or dark tag on <body> */
@@ -87,7 +87,6 @@ cite {
 
 a {
   color: #1c2129;
-  target: "_blank";
   /* font-style: italic; */
   /* text-decoration: none; */
 }
