@@ -169,6 +169,7 @@ time {
   font-family: "Baskerville";
   font-size: 75%;
   font-weight: normal;
+  white-space: nowrap;
 }
 
 /* extra styling points! */
