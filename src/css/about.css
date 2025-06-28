@@ -40,12 +40,15 @@ hr {
 
 figure {
   display: flex;
+  padding-top: 1em;
+  padding-bottom: 1em;
   flex-direction: column;
   align-items: center;
   margin: 0;
 }
 
 figure img {
+  padding-bottom: 0.5em;
   max-width: 100%;
   align-self: center;
 }
