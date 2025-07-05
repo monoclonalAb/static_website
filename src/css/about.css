@@ -113,6 +113,9 @@ h1 {
 }
 
 .important {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
   background-color: rgb(255, 48, 0, 20%);
   border-left: 3px solid #ff3000;
   border-radius: 0px;
