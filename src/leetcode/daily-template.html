@@ -20,7 +20,13 @@
         <difficulty class="$difficulty$">$difficulty$</difficulty>
         <time><!-- TIME --></time>
       </h1>
-      $body$
+      <hr />
+      $if(toc)$
+      <div id="TOC">
+        <h2 style="">table of conten<span>ts</span></h2>
+        $toc$
+      </div>
+      $endif$ $body$
     </div>
   </body>
   <script src="../scripts/target-blank-external-links.js"></script>

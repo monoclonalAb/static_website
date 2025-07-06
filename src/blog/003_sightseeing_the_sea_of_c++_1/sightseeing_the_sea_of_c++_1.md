@@ -3,7 +3,7 @@ title: Sightseeing the Sea of C++ (#1)
 date: 2025-05-18
 ---
 
-# intro<span>:</span>
+# introductio<span>n</span>
 
 wow, where have I been... I have been **slacking** that is for sure... but fear not, 
 for I have made the the executive decision to properly sit down and learn `c++`!!!
@@ -18,7 +18,7 @@ but more just me yapping about **new concepts** I have grasped after going throu
 This is mainly because I want my employers to **not** get flash-banged by my cod-, 
 **cough** because I realised I lack a lot of `c++` fundamentals and best practices that people... usually learn... first...
 
-## Post-Editor message<span>:</span>
+## post-editor messag<span>e</span>
 
 Well, hey! Turns out `c++` has a **lot of new-content**; 
 content that I do not think I will be able to get through in one sitting...
@@ -26,9 +26,9 @@ content that I do not think I will be able to get through in one sitting...
 Unfortunately, while that does mean I will not be covering all the content in this write-up,
 I guess it means, there will be more blog posts to come...!
 
-# Chapter 1 (C++ Basics)<span>:</span>
+# chapter 1 (c++ basics<span>)</span>
 
-## forms of initialization<span>:</span>
+## forms of initializatio<span>n</span>
 
 ```cpp
 // Traditional initialization forms:
@@ -61,7 +61,7 @@ int width {}; // value-initialization / zero-initialization to value 0
 
 **Note**, even the creators of `c++` also recommended initializing variables [like this](https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#Res-list).
 
-## "std::endl" vs "\\n"<span>:</span>
+## "std::endl" vs "\\n<span>"</span>
 
 Unfortunately, I may have been using `std::endl` my entire career (which is not good performance-wise)
 since it also flushes the buffer; this means if we have multiple `std::endl` commands, 
@@ -71,9 +71,9 @@ Instead, using `\n` circumvents this issue completely,
 especially since `c++`'s output system is designed to self-flush periodically,
 and it's both simpler and more efficient to let it flush itself.
 
-# Chapter 2 (C++ Basics: Functions and Files)<span>:</span>
+# chapter 2 (c++ basics: functions and files<span>)</span>
 
-## parameters vs arguments<span>:</span>
+## parameters vs argument<span>s</span>
 
 Disaster; I basically just called them both arguments.
 However:
@@ -92,7 +92,7 @@ int main()
 
 However, it is possible to have **unnamed parameters**.
 
-## unnamed parameters<span>:</span>
+## unnamed parameter<span>s</span>
 
 ...where you omit the name of a function parameter.
 It is used in cases where the parameter needs to exist, but it is not used in the body of the function.
@@ -111,7 +111,7 @@ it would be quite tedious having to *manually remove the argument from every cal
 Therefore, its better if we removed the name of the parameter (temporarily), 
 as it signifies that it is **not** being used in the body of the function.
 
-## forward declarations<span>:</span>
+## forward declaration<span>s</span>
 
 In `c++`, the ordering of how functions are declared is **important**.
 Especially when you start *importing functions from other files*,
@@ -133,7 +133,7 @@ at the start of the program.
 
 If you continue to work with **multiple files**, it is also imperative to use:
 
-## namespaces<span>:</span>
+## namespace<span>s</span>
 
 An example of namespaces are the `std::` you usally see in front of functions like `cout` to get `std::cout` 
 (when you import from the *standard library*).
@@ -163,7 +163,7 @@ int main()
 
 
 :::important
-### Note<span>:</span>
+### not<span>e</span>
 
 You may have noticed the inclusion of `using namespace std;` in the above code.
 As the name implies, it tells the compiler to use the `std` namespace by *default*.
@@ -177,7 +177,7 @@ However, for more complicated programs, using **namespaces** is an easy way to t
 (which is why its **BAD PRACTICE** to use `using namespace std;` as it forces us into a *specific namespace*).
 
 :::important
-### Note<span>:</span>
+### not<span>e</span>
 
 The only instance where `using namespace` might be *slightly acceptable* is if you:
 
@@ -212,7 +212,7 @@ namespace tungTungTungSahur {
 tungTungTungSahur::tralaleroTralala::favouriteNumber // will be 42
 ```
 
-## introduction to pre-processors<span>:</span>
+## introduction to pre-processor<span>s</span>
 
 Before compilation, the `c++` program goes into a **preprocessing** phase, where it
 
@@ -256,7 +256,7 @@ void doSomething()
 }
 ```
 
-## header files<span>:</span>
+## header file<span>s</span>
 
 Previously, we talked about **forward inclusion**.
 This might be quite feasible with only a few functions, but for hundreds!?
@@ -310,7 +310,7 @@ and lead to **duplicate definitions** which would run into a *compilation errors
 
 Note, in modern `c++`, `#pragma once` serves the same purpose as a **header guard**. 
 
-# Chapter 3 (Debugging C++ Programs)<span>:</span>
+# chapter 3 (debugging c++ programs<span>)</span>
 
 This chapter mainly went into methods of debugging that are prevelant everywhere.
 I believe the main take-aways for this chapter for me would that,
@@ -325,9 +325,9 @@ IDEs actually have quite extensive **integrated debugging** tools:
     - **step back** (most debuggers do not have this functionality due to its complexity)
 :::
 
-# Chapter 4 (Introduction to Fundamental Data Types)<span>:</span>
+# chapter 4 (introduction to fundamental data types<span>)</span>
 
-## introduction<span>:</span>
+## introductio<span>n</span>
 
 To check the size of any types, you can use the handy `sizeof` command (commonly used with `malloc`):
 ```cpp
@@ -346,9 +346,9 @@ For the **fundamental data types**, we have 4 candidates:
 - chars
 :::
 
-## integers<span>:</span>
+## integer<span>s</span>
 
-### signed-integers<span>:</span>
+### signed-integer<span>s</span>
 
 Most of the time, we should be using signed integers:
 
@@ -374,7 +374,7 @@ Their ranges are consequently:
 :::
 (using **two's complement**)
 
-### unsigned-integers<span>:</span>
+### unsigned-integer<span>s</span>
 
 There also exist *unsigned integer variants* which most people avoid ([Nuclear Gandhi](https://en.wikipedia.org/wiki/Nuclear_Gandhi)) 
 since it is:
@@ -392,7 +392,7 @@ Unfortunately, unsigned operations are still okay/necessary in certain circumsta
 3. with limited memory, like in embedded systems
 :::
 
-### fixed-size integers<span>:</span>
+### fixed-size integer<span>s</span>
 
 However, if we need **fixed-size** integers, we have e.g. `std::int#_t` and `std::uint#_t` for `8`, `16`, `32` and `64` bytes. 
 There do exist potential down-sides to **fixed-size** integers:
@@ -403,7 +403,7 @@ There do exist potential down-sides to **fixed-size** integers:
 - some **fixed-width** integers, e.g. `uint32_t` might be *slower* than `int` since the hardware might be *faster at processing 64-bit integers*.
 :::
 
-### other integer numbering systems<span>:</span>
+### other integer numbering system<span>s</span>
 
 Note, we can convert these integers into binary, hexadecimal and even octal:
 ```cpp
@@ -435,7 +435,7 @@ int main()
 }
 ```
 
-## floating point<span>:</span>
+## floating poin<span>t</span>
 
 In the *floating point category*, we have **3 main candidates**:
 
@@ -496,7 +496,7 @@ Finally, there are also certain **special** floating point numbers (just possibl
 - `Nan` => *not a number*
 :::
 
-## booleans & chars<span>:</span>
+## booleans & char<span>s</span>
 
 For both these sections, nothing novel was covered:
 
@@ -509,7 +509,7 @@ For both these sections, nothing novel was covered:
 
 finally, since we do want to convert between types
 
-## static_cast<span>:</span>
+## static_cas<span>t</span>
 
 The common that we are used to is `implicit type conversion` like e.g. passing a `float` type into a function that takes an `int` parameter.
 
@@ -531,9 +531,9 @@ meaning, in certain situations, the output may *vary*, making it harder to inter
 
 For `static_cast`, realise that it only does **non-polymorphic** (classes with no `virtual` functions) conversions at **compile-time**.
 
-# Chapter 5 (Constants and Strings)<span>:</span>
+# chapter 5 (constants and strings<span>)</span>
 
-## constants<span>:</span>
+## constant<span>s</span>
 
 There exist **2 types of constants**:
 
@@ -555,7 +555,7 @@ There exist **2 types of constants**:
         - from a `c-style string`, you can convert using `s` or `sv`
 :::
 
-## compile-time optimisation's related to constants (as-if rule)<span>:</span>
+## compile-time optimisation's related to constants (as-if rule<span>)</span>
 
 Outside of optimisations done by hand (using tools like a **[profiler](https://en.wikipedia.org/wiki/Profiling_(computer_programming))**),
 most modern `c++` compilers are **optimizing compilers**.
@@ -563,7 +563,7 @@ most modern `c++` compilers are **optimizing compilers**.
 In fact, they are given quite a lot of leeway:
 
 ::: important
-### as-if rule<span>:</span>
+### as-if rul<span>e</span>
 
 the compiler can modify the original program in any way (in order to optimise)
 as long as it does not produce any "observable changes"
@@ -584,7 +584,7 @@ modern `c++` compilers are capable of evaluating certain expressions during **co
 Hence, we could conclude that having `const` makes these *compile-time* optimisations more efficient.
 However, its deeper than that:
 
-### const vs constexpr<span>:</span>
+### const vs constexp<span>r</span>
 
 While the `as-if rule` is good for improving performance,
 it means we rely on the **compiler** to make these optimisations.
@@ -597,7 +597,7 @@ as its more performant (less run-time) and more secure (predictable).
 You tend to do this through **constant expressions**.
 
 :::important
-### constant expression<span>:</span>
+### constant expressio<span>n</span>
 you can think of as this; for an expression to be able to be ran on **compile-time**,
 it must already have all the necessary information needed before-hand to make all operations **during** compile-time
 :::
@@ -628,7 +628,7 @@ NOTE, the `as-if rule`-based optimisations and **compile-time programming** can 
 because during compile-time, the optimisations usually *changes how the program looks* and how it *behaves under the hood*,
 making actions like *stepping through code* confusing.
 
-## strings<span>:</span>
+## string<span>s</span>
 
 `C-style` strings are known to be *immutable*.
 Hence, we have the `std::string` library importable from `#include <string>`
@@ -668,7 +668,7 @@ That is what the `string.remove_prefix(#)` and `string.remove_suffix(#)` functio
 which does have the side-affect of not being **null-terminated** anymore 
 (if you need it to be null-terminated, you can simply just convert `std::string_view` to `std::string` instead).
 
-# Chapter 6 (Operators)<span>:</span>
+# chapter 6 (operators<span>)</span>
 
 For most operators, I believe that I have a sound understanding of the operators that exist and the ordering of such operators.
 
@@ -730,12 +730,12 @@ Two other more niche parts that I should mention would be:
     - can still compare them as long; want to see that they are **close enough** to `0`
 :::
 
-# Chapter 7 (Scope, Duration, and Linkage)<span>:</span>
+# chapter 7 (scope, duration, and linkage<span>)</span>
 
-## Scopes<span>:</span>
+## scop<span>e</span>
 
 :::important
-### scope<span>:</span>
+### scop<span>e</span>
 
 declares where the identifier can be accessed within the code
 :::
@@ -745,10 +745,10 @@ For this, you have the important two candidates:
 - **local** scope
 - **global** scope
 
-## Duration<span>:</span>
+## duratio<span>n</span>
 
 :::important
-### duration<span>:</span>
+### duratio<span>n</span>
 
 declares when the identifier will be created & destroyed
 :::
@@ -759,10 +759,10 @@ meaning they are created when the program starts and destroyed when it ends.
 - note, that it is best to initialize them with `g_` at the front to name global variables to avoid collions
     - in fact, its also recommended to place every global in a separate namespace
 
-## linkages<span>:</span>
+## linkag<span>e</span>
 
 :::important
-### linkage<span>:</span>
+### linkag<span>e</span>
 
 declares whether an identifier declared in a separate scope refers to the same object
 :::
@@ -791,7 +791,7 @@ which is something we want to *avoid*.
 
 For global variables and function identifiers, there exists two types of linkages:
 
-#### interal and external linkages ('static' and 'extern') <span>:</span>
+#### interal and external linkages ('static' and 'extern'<span>)</span>
 
 :::sidebar
 - **internal linkages**:
@@ -870,7 +870,7 @@ int g_x { 1 };                  // defines initialized external global variable
 
 In this case, `extern` and `static` are **storage class specifiers** (as they detail the *storage duration* and *linkage*)
 
-#### 'static' on local scope variables<span>:</span>
+#### 'static' on local scope variable<span>s</span>
 
 In fact, using `static` has different interactions with **local scope variables**.
 Basically, when used on local variables, `static` makes the local variables only created **once** and will be deleted once the program ends.
@@ -882,7 +882,7 @@ This means that the
 
 finally, the last keyword to mention is:
 
-#### inline (history lesson)<span>:</span>
+#### inline (history lesson<span>)</span>
 
 Historically speaking, `inline` optimisation used to be a thing:
 
@@ -896,7 +896,7 @@ Now, `inline` has evolved to imply **"multiple definitions are allowed"**; howev
 (will de-duplicate if multiple definitions)
 
 :::important
-### Note<span>:</span>
+### not<span>e</span>
 
 Understand, that `inline` variables have **external linkages** by default, so that the *linker* is able to see them and de-duplicate the definitions.
 :::
@@ -904,7 +904,7 @@ Understand, that `inline` variables have **external linkages** by default, so th
 Now, onto something thats **not history**. Now, the definition of inline is:
 
 :::important
-### inline<span>:</span>
+### inlin<span>e</span>
 
 multiple definitions are **allowed**, without violating ODR (one definition rule);
 these definitions have to be **exactly the same**
@@ -912,7 +912,7 @@ these definitions have to be **exactly the same**
 
 which can be used on:
 
-#### inline functions <span>:</span>
+#### inline function<span>s</span>
 
 ... which is used mainly to define **header-only functions**.
 
@@ -921,7 +921,7 @@ If possible, we do **NOT** want to do this, since the compilation time will dras
 
 (it is acceptable if you are creating something like a **header-only library** though)
 
-#### inline variables <span>:</span>
+#### inline variable<span>s</span>
 
 ... which is used mainly to define **header-only global constants**
 
@@ -1015,13 +1015,13 @@ Then, even if we import it to multiple files, since the **definitions** of all t
 only **one** instance of the variables will be created AND you can take advantage of **constant expression** optimisations.
 
 :::important
-### main con<span>:</span>
+### main co<span>n</span>
 
 Unfortunately, the one downside of all these implementations,
 is that **any change** to the header files will require a recompilation of **any file** that imports the header files
 :::
 
-#### inline namespaces <span>:</span>
+#### inline namespace<span>s</span>
 - used mainly for **versioning**:
 - example:
 ```cpp

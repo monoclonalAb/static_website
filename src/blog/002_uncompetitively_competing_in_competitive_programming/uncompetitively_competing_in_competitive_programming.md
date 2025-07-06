@@ -3,14 +3,14 @@ title: Uncompetitively Competing in Competitive Programming
 date: 2025-02-26
 ---
 
-# intro<span>:</span>
+# introductio<span>n</span>
 
 The second month may be coming to a close, and a certain individual has **definitely not** been procrastinating his second blog post of the year.
 During this time, I decided to participate in a *competitive programming competition* sponsored by a certain company beginning with I.
 Unfortunately, however, I believe that I did not have the best showing at this event, 
 so *naturally* I decided it would only be right to do a write-up for every question since practice does make permanent.
 
-## Problem A<span>:</span> Back to the Futures
+## problem a<span>:</span> back to the future<span>s</span>
 
 Sabine wants to trade some stocks and make as much money as possible. 
 She has `M` dollars to start with and knows the future prices of `S` different stocks for the next `D` days (thanks to a time machine).
@@ -27,7 +27,7 @@ three options:
 To avoid suspicion, she will choose the Buy option **at most `T` times**, where `T` is one or two. What is the
 maximum amount of money Sabine can end with?
 
-### Input<span>:</span>
+### Inpu<span>t</span>
 
 The first line of input contains four integers `T (1 ≤ T ≤ 2)`, which is the maximum number of Buys Sabine can
 do, `S (1 ≤ S ≤ 10)`, which is the number of different types of stocks, `D (2 ≤ D ≤ 200 000)`, which is the number
@@ -144,7 +144,7 @@ int main() {
 }
 ```
 
-## Problem B<span>:</span> Numbers Puzzle
+## problem b<span>:</span> numbers puzzl<span>e</span>
 
 You arrive late to class one day, expecting to be scolded. 
 Instead, you find everyone staring at the whiteboard: `3 × n` numbers have been scribbled onto it. 
@@ -254,7 +254,7 @@ int main() {
 }
 ```
 
-## Problem C<span>:</span> Pair of Watchtowers
+## problem c<span>:</span> pair of watchtower<span>s</span>
 
 You’ve just been asked to plan the construction of two watchtowers in your local nature reserve. There is a
 straight trail which runs through the reserve from west to east.
@@ -401,7 +401,7 @@ int main() {
 }
 ```
 
-## Problem D<span>:</span> Lettuce and Numbers
+## problem d<span>:</span> lettuce and number<span>s</span>
 
 Welcome to the newest **IMC** (International Media Corporation) game show, “Lettuce and Numbers”. The
 game involves strings not of letters, but of lettuces! There are two types of lettuces: ‘`a`’ and ‘`b`’.
@@ -619,3 +619,11 @@ int main() {
   return 0;
 }
 ```
+
+# in summar<span>y</span>
+
+:::sidebar
+- i need to get a **lot** better at `dynamic programming`
+- also might be the last time i do a "blog" in this "competitive programming" format as there definitely exist topics that are more interesting and readable than this one
+:::
+

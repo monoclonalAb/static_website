@@ -31,7 +31,7 @@ for subdir in $(find $dir -type d -not -path "$dir"); do
   # compile file
   pretty_date=$(echo $doc_date | xargs date +'%B %d, %Y' -d)
   output=$(basename ${file%.md}.html)
-  pandoc -s $file -o $dest/$output --template=$dir/article-template.html --mathml
+  pandoc -s $file -o $dest/$output --template=$dir/article-template.html --mathml --toc --toc-depth=2
   sed -i "s/<!-- TIME -->/$pretty_date/" $dest/$output
 
   # clear temporary file

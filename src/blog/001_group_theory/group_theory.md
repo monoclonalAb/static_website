@@ -3,7 +3,7 @@ title: GROUP-ing my thoughts on GROUP theory
 date: 2025-01-09
 ---
 
-# intro<span>:</span>
+# introductio<span>n</span>
 
 As 2025 begins (after what I perceive to be a not-so-good finals week) and people are out and about living it up outside (or inside, if that's what you prefer), 
 I decided it would be an <i>optimal</i> use of my time to understand the premise of Group Theory.
@@ -17,7 +17,7 @@ and to be able to retain such a title,
 I must at least have some fundamental understanding of what group-theory is before
 coming up with some legible argument as to why group-theory is the greatest of all time.
 
-## so what is group theory?
+# so what is group theory<span>?</span>
 
 A quick browse of any basic definition of 'group theory' will most likely net you two possible explanations:
 
@@ -26,7 +26,7 @@ A quick browse of any basic definition of 'group theory' will most likely net yo
 - the slightly more-descriptive-yet-still-not-so-descriptive one stating that it is the **study of symmetry**
 :::
 
-### wait, what are groups?
+## wait, what are groups<span>?</span>
 
 Now, the definition of a group is a:
 
@@ -46,7 +46,7 @@ The set of elements has to satisfy the axioms (established properties) below:
 At first glance, this definition does not provide much intuition for what its use cases are,
 nor does anything mention anything about symmetries in particular.
 
-### hmm, what about symmetries then?
+## hmm, what about symmetries then<span>?</span>
 
 In fact, the symmetry we talk about is slightly different from the geometrical definition that most people have been exposed to, 
 as it is generally defined as:
@@ -60,11 +60,11 @@ Using geometrical symmetry as an example,
 rotations and reflections are **symmetry operations** as a $90$, $180$, or $270$ degree rotation
 or a reflection across either of the diagonals of a square will leave it looking the same as before.
 
-### huh, what is the relationship between groups and symmetry then?
+## huh, what is the relationship between groups and symmetry then<span>?</span>
 
 To put it simply, Groups are just an **abstraction** of symmetry. 
 
-#### and, what does that mean exactly?
+### and, what does that mean exactly<span>?</span>
 
 The definition of "abstraction" that [Wikipedia](https://en.wikipedia.org/wiki/Abstraction_(mathematics)){target="_blank"} supplies is that:
 
@@ -81,6 +81,7 @@ an example of an abstraction that we use on a daily basis would just be numbers.
 Take the number 4 for example; 
 when we have 4 apples, 4 houses or 4 successful mathematicians,
 we see that the number itself is not attached to any physical object in particular,
+
 but is just there to represent the quantity of objects present.
 
 In essence, numbers **abstract** away from the specific nature of each objects involved
@@ -123,14 +124,16 @@ The set of elements has to satisfy the axioms (established properties) below:
 In other words, since groups aim to **abstract** away from the particularities of all the objects involved,
 you can view the definition of a group as an attempt to formalize the essential rules of symmetry:
 
-### wait, why do we want to abstract symmetry in the first place?
+## wait, why do we want to abstract symmetry in the first place<span>?</span>
 
 The occurence of symmetry is suprisingly common, from the shape of snowflakes,
 to its presence in architectural design and even bell ringing.[^1]
 The beauty of abstraction is that once you generate an abstract definition for a concept,
 any time these properties are satisfied, you can apply the same reasoning, tools, and theorems across a wide variety of situations.
 
-#### Important disclaimer<span>:</span>
+# could I get examples of appearances of symmetry<span>?</span>
+
+### Important disclaimer<span>:</span>
 
 Even though this was the perfect segway for me to start rattling through a lot of Group Theory's significant use-cases in science,
 after trying to disect and summarise Galois Theory in a digestable manner for non-mathematicians,
@@ -141,7 +144,7 @@ From Galois Theory in Algebra to the Lorentz group in Physics, all of these topi
 which is half the reason why I decided to leave out some more monumental discoveries that were made using group theory,
 and decided to explore some niche applications of group theory.[^2]
 
-#### Take the **Rubik's Cube** for example<span>:</span>
+## take the rubik's cube as an exampl<span>e</span>
 
 When you shuffle the cube from it's "solved" position, the result is one of the many shuffled positions of the cube that it could take.
 To reach such a position, there will always exist a set of moves of the cube that you can take to reach it.
@@ -160,7 +163,7 @@ reducing the cube to subgroups (subsets of the original groups, that satisfies a
 of the original Rubik's Cube group that only contains positions which can be solved without, for example, using quarter turns of the upper and bottom face.
 With the further optimisation of the Thistlewaite Algorithm, and improvement to computing technology, several researchers were able to eventually deduce that [God's Number is 20](https://cube20.org/){target="_blank"}.
 
-#### or the Fifteen Puzzle<span>:</span>
+## or the fifteen puzzl<span>e</span>
 
 A much simpler example to consider would be the fifteen puzzle.
 
@@ -278,7 +281,7 @@ which is a finite set that consists of all the even permutations in the correspo
 You can read more about the fifteen puzzle and its relation to the alternating group of degree 15 [here](https://web.archive.org/web/20210107214840/https://faculty.etsu.edu/beelerr/fifteen-supp.pdf){target="_blank"}.
 
 
-## In summary<span>:</span>
+# in summar<span>y</span>
 
 ::: sidebar
 - Groups Theory aims to abstract the conecpt of symmetry, providing a framework to study and compare symmetric properties without dealing with objects physical properties

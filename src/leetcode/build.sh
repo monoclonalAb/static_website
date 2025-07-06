@@ -34,7 +34,7 @@ if [ -z "$1" ]; then
 
       # compile file
       output=$(basename ${file%.md}.html)
-      pandoc -s $file -o $dest/$output --template=$dir/daily-template.html --mathml
+      pandoc -s $file -o $dest/$output --template=$dir/daily-template.html --mathml --toc --toc-depth=2
       sed -i "s/<!-- TIME -->/$formatted_date/" $dest/$output
 
       # clear temporary file
