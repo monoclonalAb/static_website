@@ -26,7 +26,7 @@ content that I do not think I will be able to get through in one sitting...
 Unfortunately, while that does mean I will not be covering all the content in this write-up,
 I guess it means, there will be more blog posts to come...!
 
-# chapter 1 (c++ basics<span>)</span>
+# c++ basic<span>s</span>
 
 ## forms of initializatio<span>n</span>
 
@@ -71,7 +71,7 @@ Instead, using `\n` circumvents this issue completely,
 especially since `c++`'s output system is designed to self-flush periodically,
 and it's both simpler and more efficient to let it flush itself.
 
-# chapter 2 (c++ basics: functions and files<span>)</span>
+# c++ basics: functions and file<span>s</span>
 
 ## parameters vs argument<span>s</span>
 
@@ -310,7 +310,9 @@ and lead to **duplicate definitions** which would run into a *compilation errors
 
 Note, in modern `c++`, `#pragma once` serves the same purpose as a **header guard**. 
 
-# chapter 3 (debugging c++ programs<span>)</span>
+# debugging c++ program<span>s</span>
+
+(lowkey glossed over this section-)
 
 This chapter mainly went into methods of debugging that are prevelant everywhere.
 I believe the main take-aways for this chapter for me would that,
@@ -325,7 +327,7 @@ IDEs actually have quite extensive **integrated debugging** tools:
     - **step back** (most debuggers do not have this functionality due to its complexity)
 :::
 
-# chapter 4 (introduction to fundamental data types<span>)</span>
+# introduction to fundamental data type<span>s</span>
 
 ## introductio<span>n</span>
 
@@ -531,7 +533,7 @@ meaning, in certain situations, the output may *vary*, making it harder to inter
 
 For `static_cast`, realise that it only does **non-polymorphic** (classes with no `virtual` functions) conversions at **compile-time**.
 
-# chapter 5 (constants and strings<span>)</span>
+# constants and string<span>s</span>
 
 ## constant<span>s</span>
 
@@ -668,7 +670,7 @@ That is what the `string.remove_prefix(#)` and `string.remove_suffix(#)` functio
 which does have the side-affect of not being **null-terminated** anymore 
 (if you need it to be null-terminated, you can simply just convert `std::string_view` to `std::string` instead).
 
-# chapter 6 (operators<span>)</span>
+# operator<span>s</span>
 
 For most operators, I believe that I have a sound understanding of the operators that exist and the ordering of such operators.
 
@@ -730,7 +732,7 @@ Two other more niche parts that I should mention would be:
     - can still compare them as long; want to see that they are **close enough** to `0`
 :::
 
-# chapter 7 (scope, duration, and linkage<span>)</span>
+# scope, duration, and linkag<span>e</span>
 
 ## scop<span>e</span>
 

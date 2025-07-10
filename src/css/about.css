@@ -132,13 +132,11 @@ h1 {
 
 /* Top-level TOC entries (chapters) */
 #TOC > ul > li > a {
-  display: flex;
-  align-items: flex-start;
+  display: block;
   font-size: 1.3rem;
   font-weight: bold;
   color: black;
   text-decoration: none;
-  position: relative;
   padding-left: calc(var(--leftTOC) + 1rem);
 }
 
