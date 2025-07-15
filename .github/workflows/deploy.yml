@@ -36,6 +36,7 @@ jobs:
         run: |
           chmod +x src/blog/build.sh
           chmod +x src/leetcode/build.sh
+          chmod +x src/parts/navbar/generateNavbar.sh
 
       - name: Install dependencies
         run: |
