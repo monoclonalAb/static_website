@@ -11,7 +11,7 @@ daily:
 	./src/leetcode/daily.sh $(if $(DATE),$(DATE),$(DEFAULT_DATE))
 
 blog:
-	./src/blog/build.sh
+	./build.sh BLOG
 
 leetcode:
 	./src/leetcode/build.sh $(if $(DATE),$(DATE),)
