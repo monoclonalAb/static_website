@@ -1,137 +1,147 @@
 /* fonts for website */
 @font-face {
-  font-family: "Helvetica";
-  font-style: normal;
-  font-weight: 400;
-  src: url("../fonts/helvetica/Helvetica.ttf") format("truetype");
+    font-family: "Helvetica";
+    font-style: normal;
+    font-weight: 400;
+    src: url("../fonts/helvetica/Helvetica.ttf") format("truetype");
 }
+
 @font-face {
-  font-family: "Helvetica";
-  font-style: oblique;
-  font-weight: 400;
-  src: url("../fonts/helvetica/Helvetica-Oblique.ttf") format("truetype");
+    font-family: "Helvetica";
+    font-style: oblique;
+    font-weight: 400;
+    src: url("../fonts/helvetica/Helvetica-Oblique.ttf") format("truetype");
 }
+
 @font-face {
-  font-family: "Helvetica";
-  font-style: normal;
-  font-weight: 700;
-  src: url("../fonts/helvetica/Helvetica-Bold.ttf") format("truetype");
+    font-family: "Helvetica";
+    font-style: normal;
+    font-weight: 700;
+    src: url("../fonts/helvetica/Helvetica-Bold.ttf") format("truetype");
 }
+
 @font-face {
-  font-family: "Helvetica";
-  font-style: oblique;
-  font-weight: 700;
-  src: url("../fonts/helvetica/Helvetica-BoldOblique.ttf") format("truetype");
+    font-family: "Helvetica";
+    font-style: oblique;
+    font-weight: 700;
+    src: url("../fonts/helvetica/Helvetica-BoldOblique.ttf") format("truetype");
 }
+
 @font-face {
-  font-family: "Baskerville";
-  font-style: normal;
-  font-weight: 400;
-  src: url("../fonts/baskerville/LibreBaskerville-Regular.ttf")
-    format("truetype");
+    font-family: "Baskerville";
+    font-style: normal;
+    font-weight: 400;
+    src: url("../fonts/baskerville/LibreBaskerville-Regular.ttf") format("truetype");
 }
+
 @font-face {
-  font-family: "Baskerville";
-  font-style: italic;
-  font-weight: 400;
-  src: url("../fonts/baskerville/LibreBaskerville-Italic.ttf")
-    format("truetype");
+    font-family: "Baskerville";
+    font-style: italic;
+    font-weight: 400;
+    src: url("../fonts/baskerville/LibreBaskerville-Italic.ttf") format("truetype");
 }
+
 @font-face {
-  font-family: "Eiko";
-  font-style: normal;
-  font-weight: 400;
-  src: url("../fonts/eiko/PPEiko-Medium.otf") format("opentype");
+    font-family: "Eiko";
+    font-style: normal;
+    font-weight: 400;
+    src: url("../fonts/eiko/PPEiko-Medium.otf") format("opentype");
 }
+
 @font-face {
-  font-family: "Eiko Bold";
-  font-style: normal;
-  font-weight: 400;
-  src: url("../fonts/eiko/PPEiko-Heavy.otf") format("opentype");
+    font-family: "Eiko Bold";
+    font-style: normal;
+    font-weight: 400;
+    src: url("../fonts/eiko/PPEiko-Heavy.otf") format("opentype");
 }
 
 /* global variables */
 :root {
-  --black: #161616;
-  --color: #1c2129;
-  --dark-gray: #374151;
-  --gray: #666666;
-  --white: #eff1f5;
-  --red: #ff4939;
+    --black: #161616;
+    --color: #1c2129;
+    --dark-gray: #374151;
+    --gray: #666666;
+    --white: #eff1f5;
+    --red: #ff4939;
 }
 
 * {
-  margin: 0;
-  padding: 0;
+    margin: 0;
+    padding: 0;
 }
+
 html,
 body {
-  height: auto;
-  width: 100vw;
-  color: var(--dark-gray);
-  font-family: "Helvetica", serif;
-  background-color: var(--white);
-  padding-bottom: 4vh;
+    height: auto;
+    width: 100vw;
+    color: var(--dark-gray);
+    font-family: "Helvetica", serif;
+    background-color: var(--white);
+    padding-bottom: 4vh;
 }
+
 ::selection {
-  /* consider changing based on light or dark tag on <body> */
-  background-color: #ffd987;
+    /* consider changing based on light or dark tag on <body> */
+    background-color: #ffd987;
 }
+
 tt {
-  font-family: monospace;
+    font-family: monospace;
 }
+
 cite {
-  /* should be default, but just in case */
-  font-style: italic;
+    /* should be default, but just in case */
+    font-style: italic;
 }
 
 a {
-  color: #1c2129;
-  /* font-style: italic; */
-  /* text-decoration: none; */
+    color: #1c2129;
+    /* font-style: italic; */
+    /* text-decoration: none; */
 }
 
 a:hover {
-  color: var(--red);
-  font-style: italic;
+    color: var(--red);
+    font-style: italic;
 }
 
 .underline-animation a,
 a.underline-animation {
-  display: inline-block;
-  position: relative;
+    display: inline-block;
+    position: relative;
 }
 
 .underline-animation a::after,
 a.underline-animation::after {
-  content: "";
-  position: absolute;
-  width: 100%;
-  transform: scaleX(0) translateY(4px);
-  height: 2px;
-  bottom: 0;
-  left: 0;
-  background-color: var(--red);
-  transition: transform 0.25s ease-out;
-  transform-origin: bottom center;
+    content: "";
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0) translateY(4px);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--red);
+    transition: transform 0.25s ease-out;
+    transform-origin: bottom center;
 }
 
 .underline-animation a:hover::after,
 a.underline-animation:hover::after {
-  transform: scaleX(1) translateY(4px);
+    transform: scaleX(1) translateY(4px);
 }
 
-p {
-  line-height: 1.4rem;
+p,
+li {
+    line-height: 1.4rem;
 }
 
-.content > h1,
-.content > h2,
-.content > h3,
-.content > h4,
-.content > h5,
-.content > h6 {
-  padding-top: 1em;
+.content>h1,
+.content>h2,
+.content>h3,
+.content>h4,
+.content>h5,
+.content>h6 {
+    padding-top: 1em;
 }
 
 h1,
@@ -140,53 +150,53 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Eiko";
-  color: var(--black);
+    font-family: "Eiko";
+    color: var(--black);
 }
 
-h1 > span,
-h2 > span,
-h3 > span,
-h4 > span,
-h5 > span,
-h6 > span {
-  color: var(--red);
+h1>span,
+h2>span,
+h3>span,
+h4>span,
+h5>span,
+h6>span {
+    color: var(--red);
 }
 
 sup {
-  vertical-align: top;
+    vertical-align: top;
 }
 
 sub {
-  vertical-align: bot;
+    vertical-align: bot;
 }
 
 .sidebar {
-  border-left: 3px solid var(--red);
-  border-radius: 0px;
-  row-gap: 10px;
+    border-left: 3px solid var(--red);
+    border-radius: 0px;
+    row-gap: 10px;
 }
 
 /* indent as long as there is no 'list' or `.row`*/
 .sidebar:not(.row):not(:has(row)):not(ol):not(:has(ol)):not(ul):not(:has(ul)) {
-  padding-left: 15px;
+    padding-left: 15px;
 }
 
 time {
-  color: var(--gray);
-  font-style: italic;
-  font-family: "Baskerville";
-  font-size: 75%;
-  font-weight: normal;
-  white-space: nowrap;
+    color: var(--gray);
+    font-style: italic;
+    font-family: "Baskerville";
+    font-size: 75%;
+    font-weight: normal;
+    white-space: nowrap;
 }
 
 /* extra styling points! */
 .code {
-  color: var(--black);
-  font-family: monospace;
-  background-color: #cee1ff;
-  border-radius: 2px;
-  padding: 2px;
-  text-decoration: none;
+    color: var(--black);
+    font-family: monospace;
+    background-color: #cee1ff;
+    border-radius: 2px;
+    padding: 2px;
+    text-decoration: none;
 }
